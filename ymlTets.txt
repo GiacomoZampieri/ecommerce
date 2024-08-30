@@ -1,0 +1,36 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+#name: Cypress Tests
+
+#on:
+#  push:
+#    branches:
+#      - main
+##      - develop
+#  pull_request:
+#    branches:
+#      - main
+ #     - develop
+
+#jobs:
+#  cypress:
+ #   runs-on: ubuntu-latest
+
+ #   steps:
+ #     - name: Checkout code
+#       uses: actions/checkout@v3
+
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: '18' # Usa la versione di Node.js che preferisci
+
+ #     - name: Install dependencies
+ #       run: npm install
+
+ #     - name: Run Cypress tests
+ #       run: npx cypress run
+#
