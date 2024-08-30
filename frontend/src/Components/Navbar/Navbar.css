@@ -1,0 +1,136 @@
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 1px 3px -2px black;
+    align-items: center;
+}
+
+.navbarLogo img{
+    width: 150px;
+}
+
+.navbarMenu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.navbarMenu li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 3px;
+    font-size: 30px;
+}
+
+.navbarLoginCart{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.navbarLoginCart button{
+    width: 157px;
+    height: 58px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 75px;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+}
+
+.navbarLoginCart button:active{
+    background: lightgrey;
+}
+
+.navbarCartCount{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: red;
+    color: white;
+}
+
+.navLoginCartIcon{
+    color: black;
+    height: 40px;
+}
+
+.adminIcon{
+    height: 40px;
+}
+
+@media(max-width: 1280px){
+    .navbar{
+        padding: 12px 50px;
+    }
+
+    .navbarLogo img{
+        width: 40px;
+    }
+
+    .navbarLogo p{
+        font-size: 25px;
+    }
+
+    .navbarMenu{
+        gap: 30px;
+        font-size: 16px;
+    }
+
+    .navbarLoginCart{
+        gap: 30px;
+    }
+
+    .navbarLoginCart button{
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .navbarCartCount{
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 1024px){
+    .navbar{
+        padding: 12px 30px;
+    }
+
+    .navbarMenu{
+        gap: 25px;
+        font-size: 14px;
+    }
+
+    .navbarLoginCart button{
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .navbarLoginCart img{
+        width: 30px;
+    }
+
+    .navbarCartCount{
+        margin-left: 18px;
+        font-size: 18px;
+    }
+}
+

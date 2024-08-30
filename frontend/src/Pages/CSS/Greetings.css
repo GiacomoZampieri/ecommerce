@@ -1,0 +1,22 @@
+.greetings{
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 6px;
+    background: white;
+    margin: 150px;
+    gap: 30px;
+}
+
+.greetingsText{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.greetingsText span{
+    color: rgb(2, 167, 2);
+}
+
+.successIcon{
+    color: rgb(2, 167, 2);
+}

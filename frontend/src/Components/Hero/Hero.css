@@ -1,0 +1,36 @@
+.hero{
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(180deg,white,rgba(5,129,183,255) 70%);
+    display: flex;
+}
+
+.heroLeft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 180px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.heroLeft p{
+    color: rgb(4, 4, 4);
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.heroLatestButton{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 15px;
+    width: 400px;
+    height: 70px;
+    border-radius: 75px;
+    margin-top: 30px;
+    color: white;
+    font-size: 22px;
+    font-weight: 500px;
+}
