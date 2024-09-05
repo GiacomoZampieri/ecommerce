@@ -20,6 +20,6 @@ steps:
     displayName: 'Installare Cypress'
 
   - script: |
-      npx cypress run
+      npx cypress run --config-file frontend/cypress.config.json 
     displayName: 'Esegui i test di Cypress'
 
