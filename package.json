@@ -4,5 +4,8 @@
     "private": true,
     "scripts": {
         "start": "set PORT=3001 && node start.js"
+    },
+    "devDependencies": {
+        "cypress": "^13.14.2"
     }
 }
