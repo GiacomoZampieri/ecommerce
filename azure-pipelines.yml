@@ -3,6 +3,14 @@ jobs:
   steps:
   - script: |
       npm install
+  - script: |
+      cd frontend
+      npm install
+  - script: |
+      cd backend
+      npm install
+  
+  - script: | 
       npm start &
       echo "Waiting for server to start..."
       sleep 20
