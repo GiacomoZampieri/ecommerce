@@ -16,8 +16,7 @@ steps:
     displayName: 'Installa le dipendenze'
 
   - script: |
-      npm start --prefix frontend &  # Avvia il frontend in background
-      npm start --prefix backend &  # Avvia il backend in background
+      npm start 
       curl -I http://localhost:3001
       curl -I http://localhost:4000
     displayName: 'Avvia i server frontend e backend'
