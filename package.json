@@ -6,6 +6,7 @@
         "start": "set PORT=3001 && node start.js"
     },
     "devDependencies": {
-        "cypress": "^13.14.2"
+        "cypress": "^13.14.2",
+        "wait-on": "^8.0.0"
     }
 }
