@@ -12,18 +12,13 @@ steps:
       versionSpec: '18.13'  # Specifica la versione di Node.js che ti serve
 
   - script: |
-      cd frontend
-      npm install
-    displayName: 'Installare le dipendenze del frontend'
+      npm install  # Installa le dipendenze nella cartella principale
+    displayName: 'Installa le dipendenze'
 
   - script: |
-      cd backend
-      npm install  # Installa le dipendenze per il backend
-    displayName: 'Installa le dipendenze del backend'
-
-  - script: |
-      npm start &
-      displayName: 'Avvia il server backend'
+      npm start --prefix frontend &  # Avvia il frontend in background
+      npm start --prefix backend &  # Avvia il backend in background
+    displayName: 'Avvia i server frontend e backend'
 
   - script: |
       npx wait-on http://localhost:3001  # Attendi che il frontend sia pronto
@@ -31,17 +26,5 @@ steps:
     displayName: 'Attendi che i server siano pronti'
 
   - script: |
-      cd frontend
-      npx cypress install
-    displayName: 'Installare Cypress'
-
-  - script: |
-      cd frontend
-      ls -la  # Debug: elenca i file nella directory corrente
-    displayName: 'Debug: Lista dei file'
-
-  - script: |
-      cd frontend
-      npx cypress run --config-file cypress.config.js 
+      npx cypress run --config-file frontend/cypress.config.js  # Esegui i test di Cypress
     displayName: 'Esegui i test di Cypress'
-
