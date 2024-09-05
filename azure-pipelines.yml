@@ -3,6 +3,7 @@ jobs:
   steps:
   - script: |
       npm install
+    displayName: 'Install npm'
 
   - script: |
       cd frontend
@@ -15,11 +16,12 @@ jobs:
     displayName: 'Install backend npm'
 
   - script: | 
-      npm start 
+      npm start > server.log 2>&1 &
       echo "Waiting for server to start..."
-      sleep 20
+      sleep 30 # Increase wait time if necessary
 
-      curl --silent --fail http://localhost:3001 || (echo "Server failed to start" && exit 1)
+      # Check if server is up
+      curl --silent --fail http://localhost:3001 || (echo "Server failed to start" && tail -n 20 server.log && exit 1)
     displayName: 'Start server'
   
   - script: |
