@@ -6,10 +6,13 @@ jobs:
   - script: |
       cd frontend
       npm install
+    displayName: 'Install frontend npm'
+
   - script: |
       cd backend
       npm install
-  
+    displayName: 'Install backend npm'
+
   - script: | 
       npm start &
       echo "Waiting for server to start..."
