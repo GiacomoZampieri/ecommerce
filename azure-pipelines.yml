@@ -16,14 +16,14 @@ steps:
     displayName: 'Installa le dipendenze'
 
   - script: |
-    cd frontend
-    npm install  # Installa le dipendenze del frontend
-  displayName: 'Installa le dipendenze del frontend'
+      cd frontend
+      npm install  # Installa le dipendenze del frontend
+    displayName: 'Installa le dipendenze del frontend'
 
   - script: |
-    cd backend
-    npm install  # Installa le dipendenze del frontend
-  displayName: 'Installa le dipendenze del backend'
+      cd backend
+      npm install  # Installa le dipendenze del frontend
+    displayName: 'Installa le dipendenze del backend'
 
   - script: |
       npm start &  # Avvia il progetto
