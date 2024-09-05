@@ -1,15 +1,25 @@
 trigger:
   branches:
     include:
-      - main
+      - main  # Sostituisci con il branch che vuoi monitorare
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - checkout: self
-  - script: echo Hello, Azure DevOps!
-  - script: echo Building your project...
-  - script: echo Add your build steps here
+  - task: UseNode@2
+    inputs:
+      versionSpec: '18.13'  # Specifica la versione di Node.js che ti serve
 
+  - script: |
+      npm install
+    displayName: 'Installare le dipendenze'
+
+  - script: |
+      npx cypress install
+    displayName: 'Installare Cypress'
+
+  - script: |
+      npx cypress run
+    displayName: 'Esegui i test di Cypress'
 
