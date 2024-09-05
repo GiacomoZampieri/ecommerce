@@ -20,6 +20,11 @@ steps:
       npx cypress install
     displayName: 'Installare Cypress'
 
+   - script: |
+      cd frontend
+      ls -la  # Debug: elenca i file nella directory corrente
+    displayName: 'Debug: Lista dei file'
+
   - script: |
       cd frontend
       npx cypress run --config-file cypress.config.js 
