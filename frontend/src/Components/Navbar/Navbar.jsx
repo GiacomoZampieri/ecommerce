@@ -21,14 +21,14 @@ const Navbar = () => {
         <ul className="navbarMenu">
             <li onClick={() => setMenu("shop")}><Link style={{textDecoration:'none',color:'black'}} to='/'>HOME</Link></li>
             <li onClick={() => setMenu("mens")}><Link style={{textDecoration:'none',color:'black'}} to='/newcollections'>NOVITA'</Link></li>
-            <li onClick={() => setMenu("mens")}><Link style={{textDecoration:'none',color:'black'}} to='/mens'>UOMO</Link></li>
-            <li onClick={() => setMenu("womens")}><Link style={{textDecoration:'none',color:'black'}} to='/womens'>DONNA</Link></li>
-            <li onClick={() => setMenu("kids")}><Link style={{textDecoration:'none',color:'black'}} to='/kids'>BAMBINO</Link></li>
+            <li onClick={() => setMenu("mens")}><Link style={{textDecoration:'none',color:'black'}} to='/man'>UOMO</Link></li>
+            <li onClick={() => setMenu("womens")}><Link style={{textDecoration:'none',color:'black'}} to='/woman'>DONNA</Link></li>
+            <li onClick={() => setMenu("kids")}><Link style={{textDecoration:'none',color:'black'}} to='/kid'>BAMBINO</Link></li>
         </ul>
         <div className="navbarLoginCart">
             {localStorage.getItem('auth-token') 
-            ? <button onClick={() => {localStorage.clear();window.location.replace("/")}}>Logout</button> 
-            : <Link to='/login'><button>Login</button></Link>}
+            ? <button className="LoginLogout" onClick={() => {localStorage.clear();window.location.replace("/")}}>Logout</button> 
+            : <Link to='/login'><button className="LoginLogout">Login</button></Link>}
             <Link to='/cart'><FontAwesomeIcon  className='navLoginCartIcon' icon={faCartShopping} alt="" /></Link>
             <div className="navbarCartCount">{getTotalCartItems()}</div>
             {localStorage.getItem('username') === 'admin' ? <Link to='/admin' style={{color:'black'}}><FontAwesomeIcon icon={faScrewdriverWrench} className='adminIcon'/></Link> : <></>}

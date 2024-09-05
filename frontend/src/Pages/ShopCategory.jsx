@@ -65,7 +65,7 @@ const ShopCategory = (props) => {
       <div>
         <input
           type="text"
-          placeholder="Cerca il brand..."
+          placeholder="Cerca il brand che preferisci..."
           value={searchTerm}
           onChange={handleChange}
           className='shopCategoryInput'

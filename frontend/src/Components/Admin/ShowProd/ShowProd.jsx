@@ -35,22 +35,22 @@ const ShowProd = () => {
       <h1>LISTA PRODOTTI</h1>
       <div className="productsListFields">
         <p>IMMAGINE</p>
-        <p>Brand</p>
+        <p>BRAND</p>
         <p>DESCRIZIONE</p>
         <p>PREZZO</p>
         <p>CATEGORIA</p>
-        <p>Tags</p>
+        <p>TAGS</p>
       </div>
       <div className="productsList-allProducts">
         <hr />
         {allproducts.map((product,index) => {
           return <><div key={index} className="productsListFields productsListFormat">
             <img src={product.image} alt="" className="productsListProductImage"/>
-            <p>{product.brand}</p>
-            <p>{product.description}</p>
-            <p>{product.price} €</p>
-            <p>{product.category}</p>
-            <p>{product.tags}</p>
+            <p  className="productsListProductBrand">{product.brand}</p>
+            <p  className="productsListProductDesc">{product.description}</p>
+            <p  className="productsListProductPrice">{product.price} €</p>
+            <p  className="productsListProductCategory">{product.category}</p>
+            <p  className="productsListProductTags">{product.tags}</p>
             <FontAwesomeIcon onClick={() => {removeProduct(product.id)}} className="productsListRemoveIcon" icon={faXmark} alt="" />
           </div>
           <hr />

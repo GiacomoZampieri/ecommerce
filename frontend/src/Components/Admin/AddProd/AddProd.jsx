@@ -44,7 +44,8 @@ const AddProd = () => {
             if (data.success) {
                 responseData = data;
             } else {
-                alert('Inserisci una foto');
+                //alert('Inserisci una foto');
+                setError(data.errors);
                 responseData = data;
             }
         })
@@ -84,7 +85,7 @@ const AddProd = () => {
         </div>
         <div className="addProductInput">
             <p>Categoria</p>
-            <select value={productDetails.category} onChange={changeHandler} name="category"  className='addProductSelect'>
+            <select value={productDetails.category} onChange={changeHandler} name="category" className='addProductSelect'>
                 <option value="donna">Donna</option>
                 <option value="uomo">Uomo</option>
                 <option value="bambino">Bambino</option>
@@ -100,7 +101,7 @@ const AddProd = () => {
             </label>
             <input onChange={imageHandler} type="file" name='image' id='file-input' hidden required='true'/>
         </div>
-        <button onClick={addProduct} className="addProductButton">AGGIUNGI PRODOTTO</button>
+        <button onClick={() => {addProduct();window.scrollTo(0,500)}} className="addProductButton">AGGIUNGI PRODOTTO</button>
         {added ? <p className='addedState'>Prodotto aggiunto correttamente!</p>: <p className='addedState'>{error}</p>}
     </div>
   )

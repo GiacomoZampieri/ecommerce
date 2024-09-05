@@ -41,7 +41,7 @@ app.use('/images',express.static('upload/images'));
 app.post("/upload",upload.single('product'),(req,res) => {
 
     if(req.file === undefined){
-        return res.status(400).json({success:false,errors:"Inserisci una foto"});
+        return res.status(400).json({success:false,errors:"Inserisci la foto del prodotto"});
     }
 
     res.json({
@@ -89,7 +89,7 @@ const Product = mongoose.model("Product",{
 
 //API FOR adding PRODUCTS
 
-app.post("/addproduct",async (req,res) => {
+app.post("/addproduct", async (req,res) => {
 
     let products = await Product.find({});
 
@@ -107,9 +107,9 @@ app.post("/addproduct",async (req,res) => {
     }
 
     if(req.body.brand === ''){
-        return res.status(400).json({success:false,errors:"Inserisci il brand"});
+        return res.status(400).json({success:false,errors:"Inserisci il brand del prodotto"});
     }else if(req.body.description === ''){
-        return res.status(400).json({success:false,errors:"Inserisci una descrizione del prodotto"});
+        return res.status(400).json({success:false,errors:"Inserisci la descrizione del prodotto"});
     }else if(req.body.price  === ''){
         return res.status(400).json({success:false,errors:"Inserisci il prezzo del prodotto"});
     }
@@ -136,7 +136,7 @@ app.post("/addproduct",async (req,res) => {
 
 //API FOR DELETING PRODUCTS
 
-app.post('/removeproduct',async (req,res) => {
+app.post('/removeproduct', async (req,res) => {
 
     await Product.findOneAndDelete({
         id:req.body.id
@@ -151,9 +151,29 @@ app.post('/removeproduct',async (req,res) => {
     });
 });
 
+app.post('/countproducts', async (req,res) => {
+
+    const {category} = req.body;
+
+    let count;
+
+    try{
+        if(category === undefined){
+            count = await Product.countDocuments({});
+        }else{
+            count = await Product.countDocuments({category:category});
+        }
+
+        res.json({count});
+    }catch (error) {
+        res.status(500).json({ error: 'Errore' });
+    }
+
+});
+
 //CREATING API FOR GETTING ALL PRODUCTS
 
-app.get('/allproducts',async (req,res) => {
+app.get('/allproducts', async (req,res) => {
 
     let products = await Product.find({}); //get all products
 
@@ -162,11 +182,11 @@ app.get('/allproducts',async (req,res) => {
     //Response to the deletion query
     res.send(products);
 
-})
+});
 
 //ENDPOINT new collection
 
-app.get('/newcollections',async (req,res) => {
+app.get('/newcollections', async (req,res) => {
 
     let products = await Product.find({});
 
@@ -199,12 +219,22 @@ const Users = mongoose.model('users',{
 
 //CREATE USER endpoint
 
-app.post('/signup',async (req,res) => {
+app.post('/signup', async (req,res) => {
+
+    console.log(req.body.email)
+
+    if(req.body.username === ""){
+        return res.status(400).json({success:false,errors:"Il campo username non può essere vuoto"});
+    }else if(req.body.password === ""){
+        return res.status(400).json({success:false,errors:"Il campo password non può essere vuoto"});
+    }else if(req.body.email === ""){
+        return res.status(400).json({success:false,errors:"Il campo email non può essere vuoto"});
+    }
 
     let check = await Users.findOne({email:req.body.email});
 
     if(check){
-        return res.status(400).json({success:false,errors:"Existing user found with same email address"});
+        return res.status(400).json({success:false,errors:"E-mail gia in uso"});
     }
 
     let cart = {};
@@ -237,11 +267,65 @@ app.post('/signup',async (req,res) => {
 
 //ENDPOINT USER LOGIN
 
-app.post('/login',async (req,res) => {
+app.post('/login', async (req,res) => {
+
+    const { email, password } = req.body;
+
+    if (!email && !password) {
+        return res.json({ success: false, errors: "Inserire email e password!" });
+    }else if(!email){
+        return res.json({ success: false, errors: "Inserire l'email!" });
+    }else if(!password){
+        return res.json({ success: false, errors: "Inserire la password!" });
+    }
+
+    /*if(req.body.password === ""){
+        res.json({success:false,errors:"Inserire la password!"});
+    }else if(req.body.email === ""){
+        res.json({success:false,errors:"Inserire l'email!"});
+    }*/
 
     let user = await Users.findOne({email:req.body.email});
 
-    if(user){
+    try {
+        // Trova l'utente con l'email fornita
+        let user = await Users.findOne({ email });
+
+        if (user) {
+            // Confronta la password fornita con la password hashata memorizzata
+            const passCompare = password === user.password;
+
+            if (passCompare) { // Se le password corrispondono
+                // Crea un payload per il token JWT
+                const data = {
+                    user: {
+                        id: user.id
+                    }
+                };
+
+                // Firma il token JWT
+                const token = jwt.sign(data, 'secret_ecom');
+
+                // Invia una risposta di successo con il token e i dettagli dell'utente
+                return res.json({ success: true, token, user });
+            } else {
+                // Password errata
+                return res.json({ success: false, errors: "Password errata!" });
+            }
+        } else {
+            // Utente non trovato
+            return res.json({ success: false, errors: "Utente non trovato: email errata!" });
+        }
+    } catch (error) {
+        return res.status(500).json({ success: false, errors: "Errore del server!" });
+    }
+
+    /*if(user){
+
+        if(req.body.password === ""){
+            res.json({success:false,errors:"Inserire la password!"});
+        }
+
         const passCompare = req.body.password === user.password; //Compare the two passwords
 
         if(passCompare){ //Se le password sono uguali
@@ -255,19 +339,18 @@ app.post('/login',async (req,res) => {
 
             res.json({success:true,token,user});
         }else{
-            res.json({success:false,errors:"Wrong Passowrd!"});
+            res.json({success:false,errors:"Password errata!"});
         }
     }else{
-        res.json({success:false,errors:"User not find: wrong email!"});
-    }
+        res.json({success:false,errors:"Utente non trovato: email errata!"});
+    }*/
 });
-
-
 
 
 //Creating middleware to fetch user
 
 const fetchUSer = async (req,res,next) => {
+
     const token = req.header('auth-token');
 
     if(!token){
@@ -288,6 +371,7 @@ const fetchUSer = async (req,res,next) => {
 //ENDPOINT for adding products in cartdata
 
 app.post('/addtocart', fetchUSer, async (req,res) => {
+
     let userData = await Users.findOne({_id:req.user.id});
 
     userData.cartData[req.body.itemId] += 1;
@@ -328,7 +412,6 @@ app.post('/removeallfromcart',fetchUSer, async (req,res) => {
 //ENDPOINT for get cartdata
 
 app.post('/getcart',fetchUSer,async (req,res) => {
-    console.log("Get Cart");
 
     let userData = await Users.findOne({_id:req.user.id});
 
@@ -341,8 +424,6 @@ app.get('/search', async (req, res) => {
 
     const category = req.query.c;
 
-    
-
     try {
       const items = await Product.find({
         brand: { $regex: searchTerm, $options:'i'},
@@ -352,8 +433,37 @@ app.get('/search', async (req, res) => {
     } catch (err) {
       res.status(500).send(err);
     }
-  });
-  
+});
+
+/*app.get('/allusers',async (req,res) => {
+
+    let users = await Users.find({}); //get all products
+
+    console.log("All products fetch");
+
+    //Response to the deletion query
+    res.send(users);
+
+})*/
+
+app.delete('/removeUser',async (req,res) => {
+
+    try {
+        const { email } = req.body;
+
+        const result = await Users.deleteOne({ email: email });
+
+        if (result.deletedCount === 0) {
+            return res.status(405).json({ message: 'User not found' });
+        }
+
+        res.status(200).json({ message: 'User deleted successfully' });
+    } catch (error) {
+
+        res.status(500).json({ message: 'Server error' });
+    }
+})
+
 
 app.listen(port,(error) => {
     if(!error){

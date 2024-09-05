@@ -8,13 +8,11 @@ const Hero = () => {
   return (
     <div className="hero">
         <div className="heroLeft">
-            <div>
-                <p>new</p>
-                <p>collections</p>
-                <p>for everyone</p>
+            <div className="heroText">
+                <p>new collections for everyone</p>
             </div>
             <div className="heroLatestButton">
-                <Link to='/newcollections' style={{textDecoration:'none',color:'white',fontSize:'35px'}}>SCOPRI I NOSTRI PRODOTTI</Link>
+                <Link to='/newcollections' style={{textDecoration:'none',color:'white',fontSize:'35px'}}>Scopri i nostri prodotti</Link>
                 <FontAwesomeIcon icon={faArrowRight} alt="" />
             </div>
         </div>

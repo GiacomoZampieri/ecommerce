@@ -28,11 +28,11 @@ const CartItems = () => {
                         <div>
                             <div className="cartItemsSingle cartItemsFields">
                                 <img src={e.image} alt="" className='cartItemsProductImage'/>
-                                <p>{e.brand}</p>
-                                <p>{e.size}</p>
-                                <p>{e.price} €</p>
+                                <p className='cartItemsBrand'>{e.brand}</p>
+                                <p className='cartItemsSize'>{e.size}</p>
+                                <p className='cartItemsPrice'>{e.price} €</p>
                                 <button className='cartItemsQuantity'>{cartItems[e.id]}</button>
-                                <p>{e.price * cartItems[e.id]} €</p>
+                                <p className='cartItemsTotalPrice'>{e.price * cartItems[e.id]} €</p>
                                 <FontAwesomeIcon className='cartItemsRemoveIcon' icon={faXmark} onClick={() => {removeFromCart(e.id)}} />
                             </div>
                         </div>
@@ -49,10 +49,10 @@ const CartItems = () => {
                     <hr />
                     <div className="cartitems-total-item">
                         <h3>Total</h3>
-                        <h3>{getTotalCartAmount()} €</h3>
+                        <h2>{getTotalCartAmount()} €</h2>
                     </div>
                 </div>
-                <Link to='/payment' ><button>PROCEED TO PAYMENT</button></Link>
+                <Link to='/payment' ><button>CONTINUA CON IL PAGAMENTO</button></Link>
             </div>
         </div>
     </div>
