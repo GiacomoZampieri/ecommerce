@@ -16,10 +16,12 @@ steps:
     displayName: 'Installare le dipendenze'
 
   - script: |
+      cd frontend
       npx cypress install
     displayName: 'Installare Cypress'
 
   - script: |
-      npx cypress run --config-file frontend/cypress.config.js
+      cd frontend
+      npx cypress run 
     displayName: 'Esegui i test di Cypress'
 
