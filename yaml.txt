@@ -1,0 +1,36 @@
+trigger:
+  branches:
+    include:
+      - main  # Sostituisci con il branch che vuoi monitorare
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.13'  # Specifica la versione di Node.js che ti serve
+
+  - script: |
+      npm install  # Installa le dipendenze nella cartella principale
+    displayName: 'Installa le dipendenze'
+
+  - script: |
+      cd frontend
+      npm install  # Installa le dipendenze del frontend
+    displayName: 'Installa le dipendenze del frontend'
+
+  - script: |
+      cd backend
+      npm install  # Installa le dipendenze del frontend
+    displayName: 'Installa le dipendenze del backend'
+
+  - script: |
+      npm start &  # Avvia il progetto
+      sleep 30  # Attendere 1 minuto per consentire l'avvio dei server
+    displayName: 'Avvia il progetto'
+
+  - script: |
+      cd frontend
+      npx cypress run --config-file cypress.config.js  # Esegui i test di Cypress
+    displayName: 'Esegui i test di Cypress'
