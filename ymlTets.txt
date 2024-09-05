@@ -1,36 +1,29 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-#name: Cypress Tests
+trigger:
+- main
 
-#on:
-#  push:
-#    branches:
-#      - main
-##      - develop
-#  pull_request:
-#    branches:
-#      - main
- #     - develop
+resources:
+- repo: self
 
-#jobs:
-#  cypress:
- #   runs-on: ubuntu-latest
+variables:
+  tag: '$(Build.BuildId)'
 
- #   steps:
- #     - name: Checkout code
-#       uses: actions/checkout@v3
-
-#      - name: Set up Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: '18' # Usa la versione di Node.js che preferisci
-
- #     - name: Install dependencies
- #       run: npm install
-
- #     - name: Run Cypress tests
- #       run: npx cypress run
-#
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: '$(Build.SourcesDirectory)/docker-compose'
+        tags: |
+          $(tag)
