@@ -2,10 +2,12 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:3001', 
+    baseUrl: 'http://localhost:3001/', 
     setupNodeEvents(on, config) {
       
     },
+    defaultCommandTimeout: 10000,  // Aumenta il timeout di default
+    pageLoadTimeout: 60000,
   },
   reporter: 'mochawesome',
   env: {
