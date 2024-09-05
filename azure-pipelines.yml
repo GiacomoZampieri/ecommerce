@@ -28,4 +28,8 @@ steps:
     npm start &
   displayName: 'Start the application'
 
+- script: |
+    cd frontend
+    npx cypress run
+
 

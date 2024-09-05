@@ -9,6 +9,7 @@ import logo from '../Assets/logo.png'
 
 const Navbar = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const [menu,setMenu] = useState("shop");
 
   const {getTotalCartItems} = useContext(ShopContext);
