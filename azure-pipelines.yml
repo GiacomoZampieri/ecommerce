@@ -33,6 +33,11 @@ steps:
 
 - script: |
     cd frontend
-    npx cypress run
+    npx cypress run --reporter mocha-junit-reporter
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: 'frontend/cypress/results/test-results.xml'
+    testRunTitle: 'Cypress Test Results'
 
 
