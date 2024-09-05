@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - task: UseNode@2
+  - task: NodeTool@0
     inputs:
       versionSpec: '18.13'  # Specifica la versione di Node.js che ti serve
 
