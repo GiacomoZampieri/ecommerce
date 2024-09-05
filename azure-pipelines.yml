@@ -13,7 +13,8 @@ steps:
 
   - script: |
       npm install
-      npm start
+      npm start &
+      curl http://localhost:3001
     displayName: 'Installare le dipendenze'
 
   - script: |
