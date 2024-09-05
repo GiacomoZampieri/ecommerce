@@ -15,7 +15,7 @@ jobs:
     displayName: 'Install backend npm'
 
   - script: | 
-      npm start &
+      npm start 
       echo "Waiting for server to start..."
       sleep 20
 
