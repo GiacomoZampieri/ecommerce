@@ -12,10 +12,23 @@ steps:
       versionSpec: '18.13'  # Specifica la versione di Node.js che ti serve
 
   - script: |
+      cd frontend
       npm install
+    displayName: 'Installare le dipendenze del frontend'
+
+  - script: |
+      cd backend
+      npm install  # Installa le dipendenze per il backend
+    displayName: 'Installa le dipendenze del backend'
+
+  - script: |
       npm start &
-      curl http://localhost:3001
-    displayName: 'Installare le dipendenze'
+      displayName: 'Avvia il server backend'
+
+  - script: |
+      npx wait-on http://localhost:3001  # Attendi che il frontend sia pronto
+      npx wait-on http://localhost:4000  # Attendi che il backend sia pronto
+    displayName: 'Attendi che i server siano pronti'
 
   - script: |
       cd frontend
