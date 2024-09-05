@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: UseNode@2
+- task: UseNode@1
   inputs:
     versionSpec: '18.13.0'
   displayName: 'Install Node.js'
@@ -25,7 +25,7 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    npm start
+    npm start &
   displayName: 'Start the application'
 
 
