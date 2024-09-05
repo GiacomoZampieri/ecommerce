@@ -18,12 +18,9 @@ steps:
   - script: |
       npm start --prefix frontend &  # Avvia il frontend in background
       npm start --prefix backend &  # Avvia il backend in background
+      curl -I http://localhost:3001
+      curl -I http://localhost:4000
     displayName: 'Avvia i server frontend e backend'
-
-  - script: |
-      npx wait-on http://localhost:3001  # Attendi che il frontend sia pronto
-      npx wait-on http://localhost:4000  # Attendi che il backend sia pronto
-    displayName: 'Attendi che i server siano pronti'
 
   - script: |
       npx cypress run --config-file frontend/cypress.config.js  # Esegui i test di Cypress
