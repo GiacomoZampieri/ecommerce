@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "cypress": "^13.13.3",
-    "eslint-plugin-cypress": "^3.5.0"
+    "eslint-plugin-cypress": "^3.5.0",
+    "mocha-junit-reporter": "^2.2.1"
   }
 }
