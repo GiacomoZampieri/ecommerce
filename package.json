@@ -2,8 +2,10 @@
     "name": "index",
     "version": "0.1.0",
     "private": true,
+    "main":"start.js",
     "scripts": {
-        "start": "set PORT=3001 && node start.js"
+        "start": "set PORT=3001 && node start.js",
+        "test":"cd frontend npx cypress run"
     },
     "devDependencies": {
         "cypress": "^13.14.2",

@@ -1,31 +1,31 @@
-jobs:
-- job: Build
-  steps:
-  - script: |
-      npm install
-    displayName: 'Install npm'
+trigger:
+- main
 
-  - script: |
-      cd frontend
-      npm install
-    displayName: 'Install frontend npm'
+pool:
+  vmImage: 'ubuntu-latest'
 
-  - script: |
-      cd backend
-      npm install
-    displayName: 'Install backend npm'
+steps:
+- task: UseNode@2
+  inputs:
+    versionSpec: '18.13.0'
+  displayName: 'Install Node.js'
 
-  - script: | 
-      npm start > server.log 2>&1 &
-      echo "Waiting for server to start..."
-      sleep 30 # Increase wait time if necessary
+- script: |
+    npm install
+  displayName: 'Install dependencies'
 
-      # Check if server is up
-      curl --silent --fail http://localhost:3001 || (echo "Server failed to start" && tail -n 20 server.log && exit 1)
-    displayName: 'Start server'
-  
-  - script: |
-      cd frontend
-      npx cypress run --config-file cypress.config.js
-    displayName: 'Run Cypress tests'
+- script: |
+    cd frontend
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    cd backend
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    npm start
+  displayName: 'Start the application'
+
 
