@@ -32,5 +32,5 @@ steps:
 
   - script: |
       cd frontend
-      npx cypress run --config-file frontend/cypress.config.js  # Esegui i test di Cypress
+      npx cypress run --config-file cypress.config.js  # Esegui i test di Cypress
     displayName: 'Esegui i test di Cypress'
