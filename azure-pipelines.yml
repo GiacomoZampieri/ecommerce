@@ -1,0 +1,63 @@
+variables:
+  PORT: '3001'
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseNode@0
+  inputs:
+    versionSpec: '18.13.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    cd frontend
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    cd backend
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    npm start &
+  displayName: 'Start the application'
+
+- script: |
+    set +e
+    cd frontend
+    npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=cypress/results/test-results-[hash].xml
+    cypress_exit_code=$?
+    set -e
+    exit $cypress_exit_code
+  displayName: 'Cypress run test'
+  continueOnError: true
+
+- script: |
+    # Merge test results if needed
+    cd frontend
+    npm install -g junit-merge
+    junit-merge -d cypress/results -o cypress/results/merged-test-results.xml
+  displayName: 'Merge Test Results'
+    
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/merged-test-results.xml'
+    mergeTestResults: true
+    testRunTitle: 'Cypress Test Results'
+    failTaskOnFailedTests: true
+  condition: succeededOrFailed()
+  displayName: 'Publish Results'
+
+- script: |
+    ls -la frontend/cypress/results/
+  displayName: 'Check Cypress Results Directory'
