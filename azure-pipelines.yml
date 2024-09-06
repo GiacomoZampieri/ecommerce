@@ -47,7 +47,7 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: '**/test-results.xml'
+    testResultsFiles: '**/merged-test-results.xml'
     mergeTestResults: true
     testRunTitle: 'Cypress Test Results'
 
