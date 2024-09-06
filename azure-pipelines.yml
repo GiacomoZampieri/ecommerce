@@ -34,7 +34,7 @@ steps:
 - script: |
     set -x
     cd frontend
-    npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=cypress/results/test-results-[hash].xml || true
+    npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=cypress/results/test-results-[hash].xml
   displayName: 'Cypress run test'
 
 - script: |
