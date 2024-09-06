@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.630" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-09-06T12:46:48" tests="0" file="cypress\e2e\UserJourney\CartPage.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Check the cart page correctness" timestamp="2024-09-06T12:46:48" tests="4" time="9.626" failures="0">
+    <testcase name="Check the cart page correctness Add two products in the cart and check the correctness of the cart page" time="3.421" classname="Add two products in the cart and check the correctness of the cart page">
+    </testcase>
+    <testcase name="Check the cart page correctness It is possible delete the items in the cart clicking on the x" time="2.265" classname="It is possible delete the items in the cart clicking on the x">
+    </testcase>
+    <testcase name="Check the cart page correctness Add two products of the same type" time="3.647" classname="Add two products of the same type">
+    </testcase>
+    <testcase name="Check the cart page correctness If the user log out from the page and after log in, the items will remain in the cart" time="0.129" classname="If the user log out from the page and after log in, the items will remain in the cart">
+    </testcase>
+  </testsuite>
+</testsuites>

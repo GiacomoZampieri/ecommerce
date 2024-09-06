@@ -34,8 +34,15 @@ steps:
 - script: |
     set -x
     cd frontend
-    npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=results/test-results.xml || true
+    npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=cypress/results/test-results-[hash].xml || true
   displayName: 'Cypress run test'
+
+- script: |
+    # Merge test results if needed
+    cd frontend
+    npm install -g junit-merge
+    junit-merge -d cypress/results -o cypress/results/merged-test-results.xml
+  displayName: 'Merge Test Results'
     
 
 - task: PublishTestResults@2

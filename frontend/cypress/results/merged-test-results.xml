@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<testsuites>
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:16" tests="0" file="cypress\e2e\Admin\AddProduct.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the addProduct functionality" timestamp="2024-09-06T12:47:16" tests="4" time="0.000" failures="0">
+  
+  <testcase name="Testing the addProduct functionality The Admin page is correctly displayed" time="1.524" classname="The Admin page is correctly displayed"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The sidebar in the Show Products page is correctly displayed" time="1.203" classname="The sidebar in the Show Products page is correctly displayed"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The navbar in the Show Products page is correctly displayed" time="1.206" classname="The navbar in the Show Products page is correctly displayed"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page is correctly displayed" time="1.175" classname="The form in the Add Product page is correctly displayed"></testcase>
+  
+</testsuite>
+<testsuite name="The form in the Add Product page works correctly" timestamp="2024-09-06T12:47:22" tests="20" time="34.385" failures="0">
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the brand name" time="1.565" classname="The admin inserts only the brand name"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the description" time="1.754" classname="The admin inserts only the description"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the price" time="1.386" classname="The admin inserts only the price"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the photo of the product" time="1.296" classname="The admin inserts only the photo of the product"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts the photo and the brand of the product" time="1.521" classname="The admin inserts the photo and the brand of the product"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts the photo and the description of the product" time="1.754" classname="The admin inserts the photo and the description of the product"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts the photo, the brand and the description of the product" time="2.054" classname="The admin inserts the photo, the brand and the description of the product"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Insert a correct women product with all of the required elemens" time="2.992" classname="Insert a correct women product with all of the required elemens"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the Show Products page" time="1.461" classname="Check if the product is the last in the Show Products page"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the NOVITA section" time="1.250" classname="Check if the product is the last in the NOVITA section"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the DONNA section" time="1.428" classname="Check if the product is the last in the DONNA section"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Insert a man product" time="2.780" classname="Insert a man product"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the Show Products page" time="1.408" classname="Check if the product is the last in the Show Products page"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the product is the last in the NOVITA section" time="1.386" classname="Verify that the product is the last in the NOVITA section"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the man product is displayed in the UOMO page" time="1.361" classname="Verify that the man product is displayed in the UOMO page"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Insert a kid product" time="2.710" classname="Insert a kid product"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the Show Products page" time="1.383" classname="Check if the product is the last in the Show Products page"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the product is the last in the NOVITA section" time="1.290" classname="Verify that the product is the last in the NOVITA section"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the kid product is displayed in the BAMBINO page" time="1.398" classname="Verify that the kid product is displayed in the BAMBINO page"></testcase>
+  
+  <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Remove the products recently added" time="1.658" classname="Remove the products recently added"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:14" tests="0" file="cypress\e2e\Pages\Woman.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the woman&apos;s products page" timestamp="2024-09-06T12:47:14" tests="3" time="1.309" failures="0">
+  
+  <testcase name="Testing the woman&apos;s products page Go to the Woman section using the navbar menu" time="0.548" classname="Go to the Woman section using the navbar menu"></testcase>
+  
+  <testcase name="Testing the woman&apos;s products page The page is displayed correctly" time="0.234" classname="The page is displayed correctly"></testcase>
+  
+  <testcase name="Testing the woman&apos;s products page A single item is correctly displayed" time="0.437" classname="A single item is correctly displayed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:45:55" tests="0" file="cypress\e2e\Login\Login.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the login page" timestamp="2024-09-06T12:45:55" tests="8" time="6.898" failures="0">
+  
+  <testcase name="Testing the login page Open the login page from the Login button" time="1.081" classname="Open the login page from the Login button"></testcase>
+  
+  <testcase name="Testing the login page The signup page is displayed correctly" time="0.244" classname="The signup page is displayed correctly"></testcase>
+  
+  <testcase name="Testing the login page Click on Login button without insert any data" time="0.327" classname="Click on Login button without insert any data"></testcase>
+  
+  <testcase name="Testing the login page Insert only the email in the login form" time="0.813" classname="Insert only the email in the login form"></testcase>
+  
+  <testcase name="Testing the login page Insert only the passowrd in the login form" time="0.474" classname="Insert only the passowrd in the login form"></testcase>
+  
+  <testcase name="Testing the login page Insert the wrong email and the correct password" time="1.166" classname="Insert the wrong email and the correct password"></testcase>
+  
+  <testcase name="Testing the login page Insert the wrong password and the correct email" time="1.174" classname="Insert the wrong password and the correct email"></testcase>
+  
+  <testcase name="Testing the login page Insert the correct email and the correct password" time="1.431" classname="Insert the correct email and the correct password"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:00" tests="0" file="cypress\e2e\Pages\Home.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the Home page" timestamp="2024-09-06T12:47:00" tests="2" time="0.857" failures="0">
+  
+  <testcase name="Testing the Home page The Navbar elements are displayed correctly" time="0.711" classname="The Navbar elements are displayed correctly"></testcase>
+  
+  <testcase name="Testing the Home page The home page is correctly displayed" time="0.113" classname="The home page is correctly displayed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:46:48" tests="0" file="cypress\e2e\UserJourney\CartPage.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Check the cart page correctness" timestamp="2024-09-06T12:46:48" tests="4" time="9.626" failures="0">
+  
+  <testcase name="Check the cart page correctness Add two products in the cart and check the correctness of the cart page" time="3.421" classname="Add two products in the cart and check the correctness of the cart page"></testcase>
+  
+  <testcase name="Check the cart page correctness It is possible delete the items in the cart clicking on the x" time="2.265" classname="It is possible delete the items in the cart clicking on the x"></testcase>
+  
+  <testcase name="Check the cart page correctness Add two products of the same type" time="3.647" classname="Add two products of the same type"></testcase>
+  
+  <testcase name="Check the cart page correctness If the user log out from the page and after log in, the items will remain in the cart" time="0.129" classname="If the user log out from the page and after log in, the items will remain in the cart"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:11" tests="0" file="cypress\e2e\Pages\NewCollections.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the New Collections page" timestamp="2024-09-06T12:47:11" tests="3" time="1.702" failures="0">
+  
+  <testcase name="Testing the New Collections page Go to the New Collections section using the navbar menu" time="0.795" classname="Go to the New Collections section using the navbar menu"></testcase>
+  
+  <testcase name="Testing the New Collections page The Navbar elements are displayed correctly" time="0.243" classname="The Navbar elements are displayed correctly"></testcase>
+  
+  <testcase name="Testing the New Collections page A single item is correctly displayed" time="0.590" classname="A single item is correctly displayed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:03" tests="0" file="cypress\e2e\Pages\Kid.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the kid&apos;s products page" timestamp="2024-09-06T12:47:03" tests="3" time="2.021" failures="0">
+  
+  <testcase name="Testing the kid&apos;s products page Go to the Kids section using the navbar menu" time="0.717" classname="Go to the Kids section using the navbar menu"></testcase>
+  
+  <testcase name="Testing the kid&apos;s products page The page is displayed correctly" time="0.258" classname="The page is displayed correctly"></testcase>
+  
+  <testcase name="Testing the kid&apos;s products page A single item is correctly displayed" time="0.977" classname="A single item is correctly displayed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:58" tests="0" file="cypress\e2e\Admin\ShowProducts.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing admin showProdcuts functionality" timestamp="2024-09-06T12:47:58" tests="5" time="6.956" failures="0">
+  
+  <testcase name="Testing admin showProdcuts functionality The Admin page is correctly displayed" time="1.921" classname="The Admin page is correctly displayed"></testcase>
+  
+  <testcase name="Testing admin showProdcuts functionality The sidebar in the Show Products page is correctly displayed" time="1.114" classname="The sidebar in the Show Products page is correctly displayed"></testcase>
+  
+  <testcase name="Testing admin showProdcuts functionality The navbar in the Show Products page is correctly displayed" time="1.149" classname="The navbar in the Show Products page is correctly displayed"></testcase>
+  
+  <testcase name="Testing admin showProdcuts functionality The table in the Show Products page is correctly displayed" time="1.086" classname="The table in the Show Products page is correctly displayed"></testcase>
+  
+  <testcase name="Testing admin showProdcuts functionality The elements in the table are correctly displayed" time="1.478" classname="The elements in the table are correctly displayed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:46:05" tests="0" file="cypress\e2e\Login\Signup.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the signup page" timestamp="2024-09-06T12:46:05" tests="12" time="21.371" failures="1">
+  
+  <testcase name="Testing the signup page Open the signup page from the Login button" time="0.000" classname="Open the signup page from the Login button">
+    
+    <failure message="Timed out retrying after 10000ms: expected &apos;http://localhost:3001/login&apos; to equal &apos;/signup&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: expected 'http://localhost:3001/login' to equal '/signup'
+    at Context.eval (webpack://frontend/./cypress/e2e/Login/Signup.cy.js:31:17)
+
+      + expected - actual
+
+      -'http://localhost:3001/login'
+      +'/signup']]></failure>
+    
+  </testcase>
+  
+  <testcase name="Testing the signup page The signup page is displayed correctly" time="0.480" classname="The signup page is displayed correctly"></testcase>
+  
+  <testcase name="Testing the signup page Click Sign Up without enter username, email and password" time="0.462" classname="Click Sign Up without enter username, email and password"></testcase>
+  
+  <testcase name="Testing the signup page Enter only the username and click on Sign Up button" time="0.740" classname="Enter only the username and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter only the email and click on Sign Up button" time="0.815" classname="Enter only the email and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter only the password and click on Sign Up button" time="0.669" classname="Enter only the password and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter the username and the email and click on Sign Up button" time="1.059" classname="Enter the username and the email and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter the username and the password and click on Sign Up button" time="0.936" classname="Enter the username and the password and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter the email and the password and click on Sign Up button" time="1.124" classname="Enter the email and the password and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter username,email,password and click on Sign Up button" time="1.643" classname="Enter username,email,password and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Enter an email already in use and click on Sign Up button" time="1.431" classname="Enter an email already in use and click on Sign Up button"></testcase>
+  
+  <testcase name="Testing the signup page Should delete an item from MongoDB" time="0.226" classname="Should delete an item from MongoDB"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:47:07" tests="0" file="cypress\e2e\Pages\Man.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Testing the man products page" timestamp="2024-09-06T12:47:07" tests="3" time="1.655" failures="0">
+  
+  <testcase name="Testing the man products page Go to the Man section using the navbar menu" time="0.800" classname="Go to the Man section using the navbar menu"></testcase>
+  
+  <testcase name="Testing the man products page The page is displayed correctly" time="0.309" classname="The page is displayed correctly"></testcase>
+  
+  <testcase name="Testing the man products page A single item is correctly displayed" time="0.476" classname="A single item is correctly displayed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-09-06T12:46:28" tests="0" file="cypress\e2e\UserJourney\AddItemsInCart.cy.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Adding items in the cart" timestamp="2024-09-06T12:46:28" tests="5" time="17.674" failures="1">
+  
+  <testcase name="Adding items in the cart The product page is displayed correctly" time="1.310" classname="The product page is displayed correctly"></testcase>
+  
+  <testcase name="Adding items in the cart The user is not logged and tries to add a product to the cart" time="0.000" classname="The user is not logged and tries to add a product to the cart">
+    
+    <failure message="Timed out retrying after 10000ms: Expected to find element: `.productDisplayRightSizes &gt; :nth-child(4)`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `.productDisplayRightSizes > :nth-child(4)`, but never found it.
+    at Context.eval (webpack://frontend/./cypress/e2e/UserJourney/AddItemsInCart.cy.js:99:60)]]></failure>
+    
+  </testcase>
+  
+  <testcase name="Adding items in the cart The user is not logged, tries to add a product to the cart, signup to the site and try again" time="3.361" classname="The user is not logged, tries to add a product to the cart, signup to the site and try again"></testcase>
+  
+  <testcase name="Adding items in the cart The user is logged and try to add an item to the cart" time="1.910" classname="The user is logged and try to add an item to the cart"></testcase>
+  
+  <testcase name="Adding items in the cart Should delete an item from MongoDB" time="0.284" classname="Should delete an item from MongoDB"></testcase>
+  
+</testsuite>
+
+</testsuites>

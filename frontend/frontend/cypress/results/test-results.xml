@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="34.429" tests="12" failures="4">
+  <testsuite name="Root Suite" timestamp="2024-09-06T12:20:19" tests="0" file="cypress\e2e\Login\Signup.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Testing the signup page" timestamp="2024-09-06T12:20:19" tests="12" time="34.424" failures="4">
+    <testcase name="Testing the signup page Open the signup page from the Login button" time="0.000" classname="Open the signup page from the Login button">
+      <failure message="Timed out retrying after 10000ms: expected &apos;http://localhost:3001/login&apos; to equal &apos;/signup&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: expected 'http://localhost:3001/login' to equal '/signup'
+    at Context.eval (webpack://frontend/./cypress/e2e/Login/Signup.cy.js:31:17)
+
+      + expected - actual
+
+      -'http://localhost:3001/login'
+      +'/signup'
+      ]]></failure>
+    </testcase>
+    <testcase name="Testing the signup page The signup page is displayed correctly" time="0.716" classname="The signup page is displayed correctly">
+    </testcase>
+    <testcase name="Testing the signup page Click Sign Up without enter username, email and password" time="1.000" classname="Click Sign Up without enter username, email and password">
+    </testcase>
+    <testcase name="Testing the signup page Enter only the username and click on Sign Up button" time="0.944" classname="Enter only the username and click on Sign Up button">
+    </testcase>
+    <testcase name="Testing the signup page Enter only the email and click on Sign Up button" time="1.355" classname="Enter only the email and click on Sign Up button">
+    </testcase>
+    <testcase name="Testing the signup page Enter only the password and click on Sign Up button" time="1.252" classname="Enter only the password and click on Sign Up button">
+    </testcase>
+    <testcase name="Testing the signup page Enter the username and the email and click on Sign Up button" time="1.599" classname="Enter the username and the email and click on Sign Up button">
+    </testcase>
+    <testcase name="Testing the signup page Enter the username and the password and click on Sign Up button" time="1.473" classname="Enter the username and the password and click on Sign Up button">
+    </testcase>
+    <testcase name="Testing the signup page Enter the email and the password and click on Sign Up button" time="1.721" classname="Enter the email and the password and click on Sign Up button">
+    </testcase>
+    <testcase name="Testing the signup page Enter username,email,password and click on Sign Up button" time="0.000" classname="Enter username,email,password and click on Sign Up button">
+      <failure message="The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  &gt; Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  > Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at signup (http://localhost:3001/static/js/bundle.js:3026:11)
+    at onClick (http://localhost:3001/static/js/bundle.js:3090:43)
+    at HTMLUnknownElement.callCallback (http://localhost:3001/static/js/bundle.js:20204:18)
+    at Object.invokeGuardedCallbackDev (http://localhost:3001/static/js/bundle.js:20248:20)
+    at invokeGuardedCallback (http://localhost:3001/static/js/bundle.js:20305:35)
+    at invokeGuardedCallbackAndCatchFirstError (http://localhost:3001/static/js/bundle.js:20319:29)
+    at executeDispatch (http://localhost:3001/static/js/bundle.js:24462:7)
+    at processDispatchQueueItemsInOrder (http://localhost:3001/static/js/bundle.js:24488:11)
+    at processDispatchQueue (http://localhost:3001/static/js/bundle.js:24499:9)
+    at dispatchEventsForPlugins (http://localhost:3001/static/js/bundle.js:24508:7)]]></failure>
+    </testcase>
+    <testcase name="Testing the signup page Enter an email already in use and click on Sign Up button" time="0.000" classname="Enter an email already in use and click on Sign Up button">
+      <failure message="The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  &gt; Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  > Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at <unknown> (http://localhost:3001/static/js/bundle.js:2445:5)
+    at commitHookEffectListMount (http://localhost:3001/static/js/bundle.js:36534:30)
+    at commitPassiveMountOnFiber (http://localhost:3001/static/js/bundle.js:38027:17)
+    at commitPassiveMountEffects_complete (http://localhost:3001/static/js/bundle.js:37999:13)
+    at commitPassiveMountEffects_begin (http://localhost:3001/static/js/bundle.js:37989:11)
+    at commitPassiveMountEffects (http://localhost:3001/static/js/bundle.js:37979:7)
+    at flushPassiveEffectsImpl (http://localhost:3001/static/js/bundle.js:39862:7)
+    at flushPassiveEffects (http://localhost:3001/static/js/bundle.js:39815:18)
+    at <unknown> (http://localhost:3001/static/js/bundle.js:39630:13)
+    at workLoop (http://localhost:3001/static/js/bundle.js:49863:38)]]></failure>
+    </testcase>
+    <testcase name="Testing the signup page Should delete an item from MongoDB" time="0.000" classname="Should delete an item from MongoDB">
+      <failure message="The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  &gt; Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  > Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at <unknown> (http://localhost:3001/static/js/bundle.js:2445:5)
+    at commitHookEffectListMount (http://localhost:3001/static/js/bundle.js:36534:30)
+    at commitPassiveMountOnFiber (http://localhost:3001/static/js/bundle.js:38027:17)
+    at commitPassiveMountEffects_complete (http://localhost:3001/static/js/bundle.js:37999:13)
+    at commitPassiveMountEffects_begin (http://localhost:3001/static/js/bundle.js:37989:11)
+    at commitPassiveMountEffects (http://localhost:3001/static/js/bundle.js:37979:7)
+    at flushPassiveEffectsImpl (http://localhost:3001/static/js/bundle.js:39862:7)
+    at flushPassiveEffects (http://localhost:3001/static/js/bundle.js:39815:18)
+    at <unknown> (http://localhost:3001/static/js/bundle.js:39630:13)
+    at workLoop (http://localhost:3001/static/js/bundle.js:49863:38)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

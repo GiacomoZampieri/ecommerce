@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.905" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-09-06T12:45:55" tests="0" file="cypress\e2e\Login\Login.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Testing the login page" timestamp="2024-09-06T12:45:55" tests="8" time="6.898" failures="0">
+    <testcase name="Testing the login page Open the login page from the Login button" time="1.081" classname="Open the login page from the Login button">
+    </testcase>
+    <testcase name="Testing the login page The signup page is displayed correctly" time="0.244" classname="The signup page is displayed correctly">
+    </testcase>
+    <testcase name="Testing the login page Click on Login button without insert any data" time="0.327" classname="Click on Login button without insert any data">
+    </testcase>
+    <testcase name="Testing the login page Insert only the email in the login form" time="0.813" classname="Insert only the email in the login form">
+    </testcase>
+    <testcase name="Testing the login page Insert only the passowrd in the login form" time="0.474" classname="Insert only the passowrd in the login form">
+    </testcase>
+    <testcase name="Testing the login page Insert the wrong email and the correct password" time="1.166" classname="Insert the wrong email and the correct password">
+    </testcase>
+    <testcase name="Testing the login page Insert the wrong password and the correct email" time="1.174" classname="Insert the wrong password and the correct email">
+    </testcase>
+    <testcase name="Testing the login page Insert the correct email and the correct password" time="1.431" classname="Insert the correct email and the correct password">
+    </testcase>
+  </testsuite>
+</testsuites>

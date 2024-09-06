@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.024" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-09-06T12:47:03" tests="0" file="cypress\e2e\Pages\Kid.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Testing the kid&apos;s products page" timestamp="2024-09-06T12:47:03" tests="3" time="2.021" failures="0">
+    <testcase name="Testing the kid&apos;s products page Go to the Kids section using the navbar menu" time="0.717" classname="Go to the Kids section using the navbar menu">
+    </testcase>
+    <testcase name="Testing the kid&apos;s products page The page is displayed correctly" time="0.258" classname="The page is displayed correctly">
+    </testcase>
+    <testcase name="Testing the kid&apos;s products page A single item is correctly displayed" time="0.977" classname="A single item is correctly displayed">
+    </testcase>
+  </testsuite>
+</testsuites>

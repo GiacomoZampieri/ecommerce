@@ -11,8 +11,11 @@ module.exports = defineConfig({
   },
   reporter: "mocha-junit-reporter",
   reporterOptions: {
-    "mochaFile": "cypress/results/test-results.xml",
-    "toConsole": true
+    "reporterEnabled": "mocha-junit-reporter, spec",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "cypress/results/test-results-[hash].xml",
+      "attachments": true
+    }
   },
   env: {
     userLogged:"utente1",

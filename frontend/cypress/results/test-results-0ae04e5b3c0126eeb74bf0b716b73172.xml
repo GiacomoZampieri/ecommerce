@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="39.577" tests="24" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-09-06T12:47:16" tests="0" file="cypress\e2e\Admin\AddProduct.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Testing the addProduct functionality" timestamp="2024-09-06T12:47:16" tests="4" time="0.000" failures="0">
+    <testcase name="Testing the addProduct functionality The Admin page is correctly displayed" time="1.524" classname="The Admin page is correctly displayed">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The sidebar in the Show Products page is correctly displayed" time="1.203" classname="The sidebar in the Show Products page is correctly displayed">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The navbar in the Show Products page is correctly displayed" time="1.206" classname="The navbar in the Show Products page is correctly displayed">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page is correctly displayed" time="1.175" classname="The form in the Add Product page is correctly displayed">
+    </testcase>
+  </testsuite>
+  <testsuite name="The form in the Add Product page works correctly" timestamp="2024-09-06T12:47:22" tests="20" time="34.385" failures="0">
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the brand name" time="1.565" classname="The admin inserts only the brand name">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the description" time="1.754" classname="The admin inserts only the description">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the price" time="1.386" classname="The admin inserts only the price">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts only the photo of the product" time="1.296" classname="The admin inserts only the photo of the product">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts the photo and the brand of the product" time="1.521" classname="The admin inserts the photo and the brand of the product">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts the photo and the description of the product" time="1.754" classname="The admin inserts the photo and the description of the product">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly The admin inserts the photo, the brand and the description of the product" time="2.054" classname="The admin inserts the photo, the brand and the description of the product">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Insert a correct women product with all of the required elemens" time="2.992" classname="Insert a correct women product with all of the required elemens">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the Show Products page" time="1.461" classname="Check if the product is the last in the Show Products page">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the NOVITA section" time="1.250" classname="Check if the product is the last in the NOVITA section">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the DONNA section" time="1.428" classname="Check if the product is the last in the DONNA section">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Insert a man product" time="2.780" classname="Insert a man product">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the Show Products page" time="1.408" classname="Check if the product is the last in the Show Products page">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the product is the last in the NOVITA section" time="1.386" classname="Verify that the product is the last in the NOVITA section">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the man product is displayed in the UOMO page" time="1.361" classname="Verify that the man product is displayed in the UOMO page">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Insert a kid product" time="2.710" classname="Insert a kid product">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Check if the product is the last in the Show Products page" time="1.383" classname="Check if the product is the last in the Show Products page">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the product is the last in the NOVITA section" time="1.290" classname="Verify that the product is the last in the NOVITA section">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Verify that the kid product is displayed in the BAMBINO page" time="1.398" classname="Verify that the kid product is displayed in the BAMBINO page">
+    </testcase>
+    <testcase name="Testing the addProduct functionality The form in the Add Product page works correctly Remove the products recently added" time="1.658" classname="Remove the products recently added">
+    </testcase>
+  </testsuite>
+</testsuites>
