@@ -39,6 +39,7 @@ steps:
     set -e
     exit $cypress_exit_code
   displayName: 'Cypress run test'
+  continueOnError: true
 
 - script: |
     # Merge test results if needed
@@ -54,6 +55,8 @@ steps:
     mergeTestResults: true
     testRunTitle: 'Cypress Test Results'
     failTaskOnFailedTests: true
+  condition: succeededOrFailed()
+  displayName: 'Publish Results'
 
 - script: |
     ls -la frontend/cypress/results/
