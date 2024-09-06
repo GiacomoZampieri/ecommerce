@@ -50,6 +50,7 @@ steps:
     testResultsFiles: '**/merged-test-results.xml'
     mergeTestResults: true
     testRunTitle: 'Cypress Test Results'
+    failTaskOnFailedTests: true
 
 - script: |
     ls -la frontend/cypress/results/
