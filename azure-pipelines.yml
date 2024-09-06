@@ -32,9 +32,12 @@ steps:
   displayName: 'Start the application'
 
 - script: |
-    set -x
+    set +e
     cd frontend
     npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=cypress/results/test-results-[hash].xml
+    cypress_exit_code=$?
+    set -e
+    exit $cypress_exit_code
   displayName: 'Cypress run test'
 
 - script: |
