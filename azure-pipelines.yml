@@ -32,8 +32,10 @@ steps:
   displayName: 'Start the application'
 
 - script: |
+    set -x
     cd frontend
-    npx cypress run --reporter mocha-junit-reporter
+    npx cypress run --reporter mocha-junit-reporter --headed --browser chrome 
+  testRunTitle: 'Cypress Test Run'
 
 - task: PublishTestResults@2
   inputs:
