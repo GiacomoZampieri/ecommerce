@@ -40,4 +40,10 @@ steps:
     testResultsFiles: 'frontend/cypress/results/test-results.xml'
     testRunTitle: 'Cypress Test Results'
 
+- script: |
+    ls -la frontend/cypress/results/
+  displayName: 'Check Cypress Results Directory'
+
+
+
 
