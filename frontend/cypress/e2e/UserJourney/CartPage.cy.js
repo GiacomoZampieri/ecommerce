@@ -36,6 +36,11 @@ const secondItemCartQuantity = ':nth-child(2)  > .cartItemsSingle > .cartItemsQu
 const secondItemCartTotal = ':nth-child(2) > .cartItemsSingle > .cartItemsTotalPrice';
 const totalPrice = '.cartitems-total-item > h2';
 
+const firstNewItem = '.collections > :nth-child(1)';
+const firstNewItemImage = '.collections > :nth-child(1) > a > img';
+const secondNewItem = '.collections > :nth-child(2)';
+const secondNewItemImage = '.collections > :nth-child(2) > a > img';
+
 describe('Check the cart page correctness', () => { 
     
     beforeEach(() => {
@@ -301,8 +306,6 @@ describe('Check the cart page correctness', () => {
 
             cy.get(firstItemCartQuantity).should('have.text','1');
 
-            let price2;
-
             cy.get(firstItemCartPrice).should(($input) => {
                 price2 = parseInt($input.text(), 10); //Transform into number
                 expect(price2).to.be.a('number'); 
@@ -329,7 +332,112 @@ describe('Check the cart page correctness', () => {
         });
     });
 
-    it('If the user log out from the page and after log in, the items will remain in the cart',() => {
+    it.only('If the user log out from the page and after log in, the items will remain in the cart',() => {
 
+        let brand1, price1, brand2, price2, total;
+
+        //Login
+        cy.contains('Login').click();
+
+        cy.get(inputEmail).click().type(emailUser);
+        cy.get(inputPassword).click().type(passwordUser);
+
+        cy.get(signUpButton).click();
+
+        cy.wait(1000);
+
+        cy.get(cartCount).should('have.text',0);
+
+        //Add two products from the NOVITA section
+
+        cy.contains('NOVITA').click();
+        cy.url().should('include','/newcollections');
+
+        cy.get(firstNewItemImage).should('exist').and('be.visible');
+        cy.get(firstNewItemImage).click({force:true});
+
+        cy.url().should('include','/product');
+
+        cy.get('.productDisplayRight > h1').should(($input) => {
+            brand1 = $input.text();
+        });
+
+        cy.get('.productDisplayRight > .productDisplayPrice').should(($input) => {
+            price1 = parseInt($input.text(), 10); //Transform into number
+            console.log(price1);
+            expect(price1).to.be.a('number'); 
+        });
+
+        cy.get(mSizeSelector).click();
+
+        cy.contains('ADD TO CART').click();
+
+        cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
+
+        cy.get(cartCount).should('have.text',1);
+
+        //Select the second item from the NOVITA section
+        cy.contains('NOVITA').click();
+        cy.url().should('include','/newcollections');
+
+        cy.get(secondNewItem).should('exist').and('be.visible');
+        cy.get(secondNewItemImage).click({force:true});
+
+        cy.get('.productDisplayRight > h1').should(($input) => {
+            brand2 = $input.text();
+        });
+
+        cy.get('.productDisplayRight > .productDisplayPrice').should(($input) => {
+            price2 = parseInt($input.text(), 10); //Transform into number
+            
+            expect(price2).to.be.a('number'); 
+        });
+
+        cy.get(mSizeSelector).click();
+
+        cy.contains('ADD TO CART').click();
+
+        cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
+
+        cy.get(cartCount).should('have.text',2);
+
+        //Logout
+        cy.contains('Logout').click();
+
+        cy.url().should('eq','http://localhost:3001/');
+
+        cy.contains('Login').should('exist').and('be.visible');
+        cy.contains('Logout').should('not.exist');
+
+        //Login
+        cy.contains('Login').click();
+
+        cy.get(inputEmail).click().type(emailUser);
+        cy.get(inputPassword).click().type(passwordUser);
+
+        cy.get(signUpButton).click();
+
+        cy.wait(1000);
+
+        cy.get(cartCount).should('have.text',2);
+
+        cy.get(cartIcon).click();
+
+        cy.then(() => {
+
+            cy.get(firstItemCartBrand).should('have.text',brand1);
+            cy.get(firstItemCartPrice).should('have.text',price1 + ' €');
+
+            cy.get(secondItemCartBrand).should('have.text',brand2);
+            cy.get(secondItemCartPrice).should('have.text',price2 + ' €');
+
+            cy.get(totalPrice).should('have.text',price2 + price1 + ' €');
+        });
+
+        cy.get(removeIcon).first().click();
+
+        cy.get(removeIcon).first().click();
+
+        cy.get(cartCount).should('have.text',0);
     });
 });
