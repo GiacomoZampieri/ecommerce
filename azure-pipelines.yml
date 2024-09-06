@@ -35,7 +35,8 @@ steps:
     set -x
     cd frontend
     npx cypress run --reporter mocha-junit-reporter --headed --browser chrome 
-  testRunTitle: 'Cypress Test Run'
+  displayName: 'Cypress run test'
+    
 
 - task: PublishTestResults@2
   inputs:
