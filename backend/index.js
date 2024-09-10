@@ -192,6 +192,8 @@ app.get('/newcollections', async (req,res) => {
 
     let newcollection = products.slice(1).slice(-8); //Prendo gli utlitmi 8 prodotti aggiunti
 
+    newcollection = newcollection.reverse();
+
     res.send(newcollection);
 })
 

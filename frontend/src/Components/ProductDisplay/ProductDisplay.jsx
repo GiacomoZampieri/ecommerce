@@ -63,7 +63,7 @@ const ProductDisplay = (props) => {
             </div>
             {addState ? <p className='productDisplaySuccess'><FontAwesomeIcon className="successIcon" icon={faCircleCheck}/> Il prodotto è stato aggiunto correttamente al carrello!</p> : <></>}
             <div className="productDisplayRightSize">
-                <h1>Select Size</h1>
+                <h1>Seleziona la taglia</h1>
                 <div className="productDisplayRightSizes">
                     <div style={{ backgroundColor: activeButton === 1 ? 'lightblue' : 'white' }} onClick={() => {setSize(product.id,"s"); handleButtonClick(1);setAddState(false)}}>S</div>
                     <div style={{ backgroundColor: activeButton === 2 ? 'lightblue' : 'white' }} onClick={() => {setSize(product.id,"m"); handleButtonClick(2);setAddState(false)}}>M</div>
@@ -72,7 +72,7 @@ const ProductDisplay = (props) => {
                     <div style={{ backgroundColor: activeButton === 5 ? 'lightblue' : 'white' }} onClick={() => {setSize(product.id,"xxl"); handleButtonClick(5);setAddState(false)}}>XXL</div>
                 </div>
             </div>
-            <button onClick={() => {handleAddToCart(product.id); window.scrollTo(0,0)} } >ADD TO CART</button>
+            <button onClick={() => {handleAddToCart(product.id); window.scrollTo(0,0)} } >AGGIUNGI AL CARRELLO</button>
             
             <p className='productDisplayRightTags'><span>Tags: </span>{product.tags}</p>
         </div>

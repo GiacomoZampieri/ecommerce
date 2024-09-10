@@ -172,6 +172,5 @@ describe('Testing admin showProdcuts functionality', () => {
                 cy.get(`.productsList-allProducts > :nth-child(${i+2})`).scrollIntoView();
             }
         });
-
     });
 })

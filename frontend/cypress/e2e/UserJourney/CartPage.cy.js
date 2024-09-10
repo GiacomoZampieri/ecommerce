@@ -34,7 +34,7 @@ const secondItemCartSize = ':nth-child(2) > .cartItemsSingle > .cartItemsSize';
 const secondItemCartPrice = ':nth-child(2)  > .cartItemsSingle > .cartItemsPrice';
 const secondItemCartQuantity = ':nth-child(2)  > .cartItemsSingle > .cartItemsQuantity';
 const secondItemCartTotal = ':nth-child(2) > .cartItemsSingle > .cartItemsTotalPrice';
-const totalPrice = '.cartitems-total-item > h2';
+const totalPrice = '.cartitems-total > span';
 
 const firstNewItem = '.collections > :nth-child(1)';
 const firstNewItemImage = '.collections > :nth-child(1) > a > img';
@@ -49,7 +49,7 @@ describe('Check the cart page correctness', () => {
 
     it("Add two products in the cart and check the correctness of the cart page",() => {
 
-        cy.contains('UOMO').click();
+        cy.contains('BAMBINO').click();
 
         cy.get(firstItem).should('exist').and('be.visible');
 
@@ -84,7 +84,7 @@ describe('Check the cart page correctness', () => {
 
         cy.get(mSizeSelector).click();
 
-        cy.contains("ADD TO CART").click();
+        cy.contains("AGGIUNGI AL CARRELLO").click();
 
         //Login
         cy.get(inputEmail).click().type(emailUser);
@@ -99,13 +99,13 @@ describe('Check the cart page correctness', () => {
         cy.get(loginLogoutButton).should('have.text','Logout');
 
         //Select a man product
-        cy.contains('UOMO').click();
+        cy.contains('BAMBINO').click();
 
         cy.get(itemImage).click();
 
         cy.get(mSizeSelector).click();
 
-        cy.contains('ADD TO CART').click();
+        cy.contains("AGGIUNGI AL CARRELLO").click();
 
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
 
@@ -144,7 +144,7 @@ describe('Check the cart page correctness', () => {
 
             cy.get(sSizeSelector).click();
 
-            cy.contains('ADD TO CART').click();
+            cy.contains("AGGIUNGI AL CARRELLO").click();
 
             cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
 
@@ -264,11 +264,11 @@ describe('Check the cart page correctness', () => {
 
         cy.get(mSizeSelector).click();
 
-        cy.contains('ADD TO CART').click();
+        cy.contains("AGGIUNGI AL CARRELLO").click();
 
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
 
-        cy.contains('ADD TO CART').click();
+        cy.contains("AGGIUNGI AL CARRELLO").click();
 
         cy.get(cartCount).contains(2);
 
@@ -332,9 +332,9 @@ describe('Check the cart page correctness', () => {
         });
     });
 
-    it.only('If the user log out from the page and after log in, the items will remain in the cart',() => {
+    it('If the user log out from the page and after log in, the items will remain in the cart',() => {
 
-        let brand1, price1, brand2, price2, total;
+        let brand1, price1, brand2, price2;
 
         //Login
         cy.contains('Login').click();
@@ -370,7 +370,7 @@ describe('Check the cart page correctness', () => {
 
         cy.get(mSizeSelector).click();
 
-        cy.contains('ADD TO CART').click();
+        cy.contains("AGGIUNGI AL CARRELLO").click();
 
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
 
@@ -395,7 +395,7 @@ describe('Check the cart page correctness', () => {
 
         cy.get(mSizeSelector).click();
 
-        cy.contains('ADD TO CART').click();
+        cy.contains("AGGIUNGI AL CARRELLO").click();
 
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
 
@@ -439,5 +439,7 @@ describe('Check the cart page correctness', () => {
         cy.get(removeIcon).first().click();
 
         cy.get(cartCount).should('have.text',0);
+
+        cy.get(totalPrice).should('have.text','0 €');
     });
 });

@@ -53,12 +53,6 @@
     gap: 40px
 }
 
-.cartitems-total-item{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0px;
-}
-
 .cartitems-total button{
     width: 262px;
     height: 58px;

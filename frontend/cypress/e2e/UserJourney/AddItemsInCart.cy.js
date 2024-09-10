@@ -82,7 +82,7 @@ describe('Adding items in the cart', () => {
 
         //The add to cart button is correctly displayed
 
-        cy.contains('ADD TO CART').should('exist').and('be.visible');
+        cy.contains('AGGIUNGI AL CARRELLO').should('exist').and('be.visible');
 
         //The tags section is correctly displayed
 
@@ -99,7 +99,7 @@ describe('Adding items in the cart', () => {
         cy.get('.productDisplayRightSizes > :nth-child(4)').should('have.text','XL');
 
         //Click on add to cart button
-        cy.contains('ADD TO CART').click();
+        cy.contains('AGGIUNGI AL CARRELLO').click();
 
         cy.url().should('contains','/login');
 
@@ -117,9 +117,11 @@ describe('Adding items in the cart', () => {
         cy.get('.productDisplayRightSizes > :nth-child(4)').should('have.text','XL');
 
         //Click on login button
-        cy.contains('ADD TO CART').click();
+        cy.contains('AGGIUNGI AL CARRELLO').click();
 
         cy.url().should('contains','/login');
+
+        cy.get(cartCount).contains(0);
 
         cy.contains('Clicca qui').click();
 
@@ -146,7 +148,7 @@ describe('Adding items in the cart', () => {
         cy.get(xlSizeSelector).should('have.css','backgroundColor','rgb(173, 216, 230)');
 
         //Click on add to cart button
-        cy.contains('ADD TO CART').click();
+        cy.contains('AGGIUNGI AL CARRELLO').click();
 
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('have.css','color','rgb(1, 139, 1)');
@@ -181,7 +183,7 @@ describe('Adding items in the cart', () => {
         cy.get(xlSizeSelector).should('have.css','backgroundColor','rgb(173, 216, 230)');
 
         //Click on add to cart button
-        cy.contains('ADD TO CART').click();
+        cy.contains('AGGIUNGI AL CARRELLO').click();
 
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('exist').and('be.visible');
         cy.contains('Il prodotto è stato aggiunto correttamente al carrello!').should('have.css','color','rgb(1, 139, 1)');
@@ -191,7 +193,7 @@ describe('Adding items in the cart', () => {
     });
 
 
-    it('Should delete an item from MongoDB', () => {
+    it('Should delete a the user from MongoDB', () => {
         cy.request({
             method: 'DELETE',
             url: 'http://localhost:4000/removeUser', // URL dell'endpoint del tuo backend

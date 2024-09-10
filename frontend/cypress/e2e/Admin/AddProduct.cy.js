@@ -338,19 +338,19 @@ describe('Testing the addProduct functionality', () => {
 
             cy.contains('NOVITA').click();
 
-            cy.get(`.collections > :nth-child(8)`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1)`).should('exist').and('be.visible');
             
-            cy.get(`.collections > :nth-child(8) > a > img`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > a > img`).should('exist').and('be.visible');
     
-            cy.get(`.collections > :nth-child(8) > .brand`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .brand`).should('have.text',newWomanProductBrand);
+            cy.get(`.collections > :nth-child(1) > .brand`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .brand`).should('have.text',newWomanProductBrand);
 
-            cy.get(`.collections > :nth-child(8) > .description`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .description`).contains('donna');
-            cy.get(`.collections > :nth-child(8) > .description`).should('have.text',newWomanProductDescription + ' donna');
+            cy.get(`.collections > :nth-child(1) > .description`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .description`).contains('donna');
+            cy.get(`.collections > :nth-child(1) > .description`).should('have.text',newWomanProductDescription + ' donna');
     
-            cy.get(`.collections > :nth-child(8) > .itemPrice`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .itemPrice`).should('have.text',newWomanProductPrice + ' €');
+            cy.get(`.collections > :nth-child(1) > .itemPrice`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .itemPrice`).should('have.text',newWomanProductPrice + ' €');
         });
 
         it('Check if the product is the last in the DONNA section',() => {
@@ -443,19 +443,19 @@ describe('Testing the addProduct functionality', () => {
 
             cy.contains('NOVITA').click();
 
-            cy.get(`.collections > :nth-child(8)`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1)`).should('exist').and('be.visible');
             
-            cy.get(`.collections > :nth-child(8) > a > img`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > a > img`).should('exist').and('be.visible');
     
-            cy.get(`.collections > :nth-child(8) > .brand`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .brand`).should('have.text',newManProductBrand);
+            cy.get(`.collections > :nth-child(1) > .brand`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .brand`).should('have.text',newManProductBrand);
 
-            cy.get(`.collections > :nth-child(8) > .description`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .description`).contains('uomo');
-            cy.get(`.collections > :nth-child(8) > .description`).should('have.text',newManProductDescription + ' uomo');
+            cy.get(`.collections > :nth-child(1) > .description`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .description`).contains('uomo');
+            cy.get(`.collections > :nth-child(1) > .description`).should('have.text',newManProductDescription + ' uomo');
     
-            cy.get(`.collections > :nth-child(8) > .itemPrice`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .itemPrice`).should('have.text',newManProductPrice + ' €');
+            cy.get(`.collections > :nth-child(1) > .itemPrice`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .itemPrice`).should('have.text',newManProductPrice + ' €');
         });
 
         it('Verify that the man product is displayed in the UOMO page',() => {
@@ -548,19 +548,19 @@ describe('Testing the addProduct functionality', () => {
 
             cy.contains('NOVITA').click();
 
-            cy.get(`.collections > :nth-child(8)`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1)`).should('exist').and('be.visible');
             
-            cy.get(`.collections > :nth-child(8) > a > img`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > a > img`).should('exist').and('be.visible');
     
-            cy.get(`.collections > :nth-child(8) > .brand`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .brand`).should('have.text',newKidProductBrand);
+            cy.get(`.collections > :nth-child(1) > .brand`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .brand`).should('have.text',newKidProductBrand);
 
-            cy.get(`.collections > :nth-child(8) > .description`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .description`).contains('bambino');
-            cy.get(`.collections > :nth-child(8) > .description`).should('have.text',newKidProductDescription + ' bambino');
+            cy.get(`.collections > :nth-child(1) > .description`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .description`).contains('bambino');
+            cy.get(`.collections > :nth-child(1) > .description`).should('have.text',newKidProductDescription + ' bambino');
     
-            cy.get(`.collections > :nth-child(8) > .itemPrice`).should('exist').and('be.visible');
-            cy.get(`.collections > :nth-child(8) > .itemPrice`).should('have.text',newKidProductPrice + ' €');
+            cy.get(`.collections > :nth-child(1) > .itemPrice`).should('exist').and('be.visible');
+            cy.get(`.collections > :nth-child(1) > .itemPrice`).should('have.text',newKidProductPrice + ' €');
         });
 
         it('Verify that the kid product is displayed in the BAMBINO page',() => {
@@ -599,8 +599,6 @@ describe('Testing the addProduct functionality', () => {
                 method: 'POST',
                 url: 'http://localhost:4000/countproducts'
               }).then((response) => {
-
-                console.log(response.body.count);
 
                 const lastItemIndex = response.body.count * 2;
 

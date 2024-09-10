@@ -44,14 +44,7 @@ const CartItems = () => {
         </div>
         <div className='cartitems-down'>
             <div className="cartitems-total">
-                <h1>Cart Totals</h1>
-                <div>
-                    <hr />
-                    <div className="cartitems-total-item">
-                        <h3>Total</h3>
-                        <h2>{getTotalCartAmount()} €</h2>
-                    </div>
-                </div>
+                <h1>Totale carrello: <span>{getTotalCartAmount()} </span>€</h1>
                 <Link to='/payment' ><button>CONTINUA CON IL PAGAMENTO</button></Link>
             </div>
         </div>
