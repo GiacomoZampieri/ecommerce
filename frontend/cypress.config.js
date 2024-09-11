@@ -39,5 +39,10 @@ module.exports = defineConfig({
     newKidProductDescription: 'Maglietta da calcio',
     newKidProductPrice: 30,
     newKidProductTags: 'Maglietta, Estate',
+    emailValue: "",
+    firstItemBrand: "",
+    fistItemPrice: "",
+    secondItemBrand: "",
+    secondItemPrice: "",
   },
 });

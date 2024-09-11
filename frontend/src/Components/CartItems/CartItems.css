@@ -65,3 +65,8 @@
     cursor: pointer;
     border-radius: 10px;
 }
+
+.cartitems-total button:disabled{
+    background: rgb(127, 156, 184);
+    cursor: not-allowed;
+}

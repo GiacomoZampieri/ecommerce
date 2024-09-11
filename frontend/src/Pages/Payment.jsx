@@ -4,7 +4,7 @@ import PaymentForm from '../Components/PaymentForm/PaymentForm'
 const Payment = () => {
   return (
     <>
-        <PaymentForm />
+        <PaymentForm/>
     </>
   )
 }

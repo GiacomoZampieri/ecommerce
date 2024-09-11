@@ -281,12 +281,6 @@ app.post('/login', async (req,res) => {
         return res.json({ success: false, errors: "Inserire la password!" });
     }
 
-    /*if(req.body.password === ""){
-        res.json({success:false,errors:"Inserire la password!"});
-    }else if(req.body.email === ""){
-        res.json({success:false,errors:"Inserire l'email!"});
-    }*/
-
     let user = await Users.findOne({email:req.body.email});
 
     try {
@@ -315,37 +309,11 @@ app.post('/login', async (req,res) => {
                 return res.json({ success: false, errors: "Password errata!" });
             }
         } else {
-            // Utente non trovato
             return res.json({ success: false, errors: "Utente non trovato: email errata!" });
         }
     } catch (error) {
         return res.status(500).json({ success: false, errors: "Errore del server!" });
     }
-
-    /*if(user){
-
-        if(req.body.password === ""){
-            res.json({success:false,errors:"Inserire la password!"});
-        }
-
-        const passCompare = req.body.password === user.password; //Compare the two passwords
-
-        if(passCompare){ //Se le password sono uguali
-            const data = {
-                user:{
-                    id:user.id
-                }
-            }
-
-            const token = jwt.sign(data,'secret_ecom');
-
-            res.json({success:true,token,user});
-        }else{
-            res.json({success:false,errors:"Password errata!"});
-        }
-    }else{
-        res.json({success:false,errors:"Utente non trovato: email errata!"});
-    }*/
 });
 
 
@@ -437,17 +405,6 @@ app.get('/search', async (req, res) => {
     }
 });
 
-/*app.get('/allusers',async (req,res) => {
-
-    let users = await Users.find({}); //get all products
-
-    console.log("All products fetch");
-
-    //Response to the deletion query
-    res.send(users);
-
-})*/
-
 app.delete('/removeUser',async (req,res) => {
 
     try {
@@ -466,6 +423,27 @@ app.delete('/removeUser',async (req,res) => {
     }
 })
 
+app.post('/payment', async (req, res) => {
+
+    const { cardNumber, cardDate, cvv } = req.body;
+
+    if (!cardNumber && !cardDate && !cvv) {
+        return res.json({ success: false, errors: "Inserire i dati della carta!" });
+    }else if(!cardNumber){
+        return res.json({ success: false, errors: "Inserire il numero della carta!" });
+    }else if(!cardDate){
+        return res.json({ success: false, errors: "Inserire la data di scadenza della carta!" });
+    }else if(!cvv){
+        return res.json({ success: false, errors: "Inserire il codice di sicurezza!" });
+    }
+
+    try {
+        return res.json({ success: true, message: "Pagamento effettuato con successo!" });
+    } catch (error) {
+        return res.json({ success: false, errors: "Errore nell'elaborazione del pagamento." });
+    }
+    
+});
 
 app.listen(port,(error) => {
     if(!error){

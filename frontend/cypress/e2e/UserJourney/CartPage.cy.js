@@ -36,7 +36,6 @@ const secondItemCartQuantity = ':nth-child(2)  > .cartItemsSingle > .cartItemsQu
 const secondItemCartTotal = ':nth-child(2) > .cartItemsSingle > .cartItemsTotalPrice';
 const totalPrice = '.cartitems-total > span';
 
-const firstNewItem = '.collections > :nth-child(1)';
 const firstNewItemImage = '.collections > :nth-child(1) > a > img';
 const secondNewItem = '.collections > :nth-child(2)';
 const secondNewItemImage = '.collections > :nth-child(2) > a > img';

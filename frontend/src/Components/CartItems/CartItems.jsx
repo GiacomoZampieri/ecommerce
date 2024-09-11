@@ -45,7 +45,7 @@ const CartItems = () => {
         <div className='cartitems-down'>
             <div className="cartitems-total">
                 <h1>Totale carrello: <span>{getTotalCartAmount()} </span>€</h1>
-                <Link to='/payment' ><button>CONTINUA CON IL PAGAMENTO</button></Link>
+                <Link to='/payment' ><button disabled={getTotalCartAmount() > 0 ? false : true}>PROCEDI CON IL PAGAMENTO</button></Link>
             </div>
         </div>
     </div>

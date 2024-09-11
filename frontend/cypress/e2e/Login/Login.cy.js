@@ -30,7 +30,7 @@ describe('Testing the login page', () => {
         cy.url().should('contains', '/login');
     });
 
-    it('The signup page is displayed correctly', () => {
+    it('The login page is displayed correctly', () => {
 
         cy.get(loginLogoutButton).click();
 
@@ -58,7 +58,7 @@ describe('Testing the login page', () => {
 
         cy.get(errorMessage).should('exist').and('be.visible');
         cy.get(errorMessage).contains('Inserire email e password!');
-    })
+    });
 
     it('Insert only the email in the login form',() => {
 
