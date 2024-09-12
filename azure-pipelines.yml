@@ -54,10 +54,6 @@ steps:
     testResultsFiles: '**/merged-test-results.xml'
     mergeTestResults: true
     testRunTitle: 'Cypress Test Results'
-    failTaskOnFailedTests: false
+    failTaskOnFailedTests: true
   condition: succeededOrFailed()
   displayName: 'Publish Results'
-
-- script: |
-    ls -la frontend/cypress/results/
-  displayName: 'Check Cypress Results Directory'
