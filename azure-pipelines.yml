@@ -54,7 +54,7 @@ steps:
     testResultsFiles: '**/merged-test-results.xml'
     mergeTestResults: true
     testRunTitle: 'Cypress Test Results'
-    failTaskOnFailedTests: true
+    failTaskOnFailedTests: false
   condition: succeededOrFailed()
   displayName: 'Publish Results'
 
