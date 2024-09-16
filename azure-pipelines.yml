@@ -52,6 +52,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFiles: '**/merged-test-results.xml'
+    testResultsFormat: 'JUnit'
     mergeTestResults: true
     testRunTitle: 'Cypress Test Results'
     failTaskOnFailedTests: true
