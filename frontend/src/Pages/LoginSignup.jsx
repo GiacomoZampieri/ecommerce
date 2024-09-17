@@ -20,7 +20,7 @@ const LoginSignup = () => {
 
     let responseData;
 
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://ecommerce-6k1a.vercel.app/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
@@ -37,7 +37,7 @@ const LoginSignup = () => {
 
       localStorage.setItem('username',responseData.user.name);
       
-      window.location.href = "http://localhost:3001/";
+      window.location.href = "https://ecommerce-6k1a.vercel.app/";
       
     }else{
       setError(responseData.errors);
@@ -48,7 +48,7 @@ const LoginSignup = () => {
 
     let responseData;
 
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://ecommerce-6k1a.vercel.app/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
