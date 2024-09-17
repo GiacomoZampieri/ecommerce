@@ -10,10 +10,12 @@ const cors = require("cors");
 const { type } = require("os");
 const app = express();
 
+const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS.split(',');
+
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://ecommerce-avmq.vercel.app', 
+    origin: allowedOrigins, 
 }));
 
 //DATABASE CONNECTION WITH MONGO DB
