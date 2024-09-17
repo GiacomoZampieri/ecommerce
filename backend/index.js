@@ -12,9 +12,12 @@ const app = express();
 
 const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS.split(',');
 
-app.use(cors({
-    origin: allowedOrigins, 
-}));
+const corsOptions = {
+  origin: "https://ecommerce-6k1a.vercel.app",
+};
+
+app.use(cors(corsOptions));
+
 
 app.options('*', cors()); 
 
