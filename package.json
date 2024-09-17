@@ -5,7 +5,8 @@
     "main": "start.js",
     "scripts": {
         "start": "set PORT=3001 && node start.js",
-        "test": "cd frontend npx cypress run"
+        "test": "cd frontend npx cypress run",
+        "build": "react-scripts build"
     },
     "devDependencies": {
         "cypress": "^13.14.2",
@@ -16,6 +17,7 @@
         "@stripe/react-stripe-js": "^2.8.0",
         "@stripe/stripe-js": "^4.4.0",
         "mocha-multi-reporters": "^1.5.1",
+        "react-scripts": "^5.0.1",
         "stripe": "^16.10.0"
     }
 }
