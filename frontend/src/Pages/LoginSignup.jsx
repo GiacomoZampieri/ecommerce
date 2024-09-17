@@ -22,6 +22,7 @@ const LoginSignup = () => {
 
     await fetch('https://ecommerce-6k1a-mdporbmri-giacomozampieris-projects.vercel.app/login',{
       method:'POST',
+      mode: 'no-cors', 
       headers:{
         Accept:'application/form-data',
         'Content-Type':'application/json',
@@ -50,6 +51,7 @@ const LoginSignup = () => {
 
     await fetch('https://ecommerce-6k1a-mdporbmri-giacomozampieris-projects.vercel.app/signup',{
       method:'POST',
+      mode: 'no-cors', 
       headers:{
         Accept:'application/form-data',
         'Content-Type':'application/json',
