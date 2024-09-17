@@ -1,5 +1,6 @@
 const port = 4000 || 8080;
 
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
@@ -7,8 +8,6 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const { type } = require("os");
-const stripe = require("stripe")("sk_test_51Ps4GXDvu9U1LDKGLEqyHldZzFlfot91Z3G835u6rvQm35BBBPHPC9gZtX8MQPbIbwQwPKk4ZnCy1MPecaLBgAF300HOWny4fN");
-
 const app = express();
 
 app.use(express.json());
@@ -16,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 //DATABASE CONNECTION WITH MONGO DB
-mongoose.connect("mongodb+srv://admin3:admin3@e-commerce.zsqb1.mongodb.net/")
+mongoose.connect(process.env.MONGO_URI)
 
 //API CREATION
 

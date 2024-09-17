@@ -48,7 +48,7 @@ const LoginSignup = () => {
 
     let responseData;
 
-    await fetch('https://ecommerce-6k1a.vercel.app/login',{
+    await fetch('https://ecommerce-6k1a.vercel.app/signup',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
