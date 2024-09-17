@@ -20,7 +20,7 @@ const LoginSignup = () => {
 
     let responseData;
 
-    await fetch('ecommerce-6k1a-m7l7t82zz-giacomozampieris-projects.vercel.app/login',{
+    await fetch('/login',{
       method:'POST',
       mode: 'no-cors', 
       headers:{
@@ -49,7 +49,7 @@ const LoginSignup = () => {
 
     let responseData;
 
-    await fetch('ecommerce-6k1a-m7l7t82zz-giacomozampieris-projects.vercel.app/signup',{
+    await fetch('/signup',{
       method:'POST',
       mode: 'no-cors', 
       headers:{
