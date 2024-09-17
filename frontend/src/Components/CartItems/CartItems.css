@@ -70,3 +70,19 @@
     background: rgb(127, 156, 184);
     cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+    
+    .cartItems{
+        margin: 10px 10px;
+    }
+
+    .cartitems-down{
+        display: flex;
+        margin: 10px 0px;
+    }
+
+    .cartItemsFields{
+        gap: 20px;
+    }
+}

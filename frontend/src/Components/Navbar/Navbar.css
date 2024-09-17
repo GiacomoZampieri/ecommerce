@@ -74,6 +74,22 @@
     height: 40px;
 }
 
+.menuIcon{
+    display: none;
+}
+
+.navbarMenuVertical {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    background-color: white;
+    position: absolute;
+    top: 50px; /* Sotto la navbar */
+    left: 0;
+    width: 100%;
+    padding: 10px;
+}
+
 @media(max-width: 1280px){
     .navbar{
         padding: 12px 50px;
@@ -105,6 +121,8 @@
     .navbarCartCount{
         margin-left: -40px;
         font-size: 12px;
+        margin-top: -35px;
+        margin-left: -55px;
     }
 }
 
@@ -134,3 +152,49 @@
     }
 }
 
+
+@media (max-width: 768px) {
+
+    .navbarMenu{
+        display: none;
+    }
+
+    .navbarCartCount{
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
+        margin-top: -35px;
+        margin-left: -35px;
+    }
+
+    .navLoginCartIcon{
+        height: 20px;
+    }
+
+    .navbarLoginCart button{
+        width: 50px;
+        height: 25px;
+        color: black;
+        font-size: 10px;
+        font-weight: 500;
+        background: white;
+        cursor: pointer;
+    }
+    
+    .adminIcon{
+        height: 20px;
+    }
+
+    .menuIcon{
+        display: flex;
+        width: 30px;
+        height: 20px;
+    }
+
+    .navbarMenuVertical.active {
+        display: flex;
+        text-align: center;
+        row-gap: 10px;
+        z-index: 10;
+    }
+}

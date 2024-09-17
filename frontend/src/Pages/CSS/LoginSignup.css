@@ -66,3 +66,30 @@
     font-weight: 500;
     margin-top: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .loginSignupContainer{
+        width: 250px;
+    }
+
+    .loginSignup{
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 0px;
+    }
+
+    .loginSignupFields input{
+        height: 40px;
+        width: 100%;
+        padding-left: 10px;
+        font-size: 13px;
+    }
+
+    .loginSignupFields button{
+        height: 40px;
+        width: 100%;
+        font-size: 13px;
+    }
+    
+  }

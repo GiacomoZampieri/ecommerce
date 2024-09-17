@@ -193,10 +193,10 @@ describe('Testing the signup page', () => {
     it('Should delete an item from MongoDB', () => {
         cy.request({
             method: 'DELETE',
-            url: 'http://localhost:4000/removeUser', // URL dell'endpoint del tuo backend
-            body: { email: emailUser } // Passa l'email dell'utente da eliminare
+            url: 'http://localhost:4000/removeUser', 
+            body: { email: emailUser } 
           }).then((response) => {
-            expect(response.status).to.eq(200); // Assicurati che l'eliminazione sia stata completata con successo
+            expect(response.status).to.eq(200); 
         });
     });
 })

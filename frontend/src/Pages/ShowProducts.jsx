@@ -5,8 +5,7 @@ import ShowProd from '../Components/Admin/ShowProd/ShowProd'
 const ShowProducts = () => {
   return (
     <div className='showProducts'>
-        <ShowProd />
-        
+        <ShowProd />  
     </div>
   )
 }

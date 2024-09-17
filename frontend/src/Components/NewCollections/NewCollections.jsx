@@ -12,11 +12,9 @@ const NewCollections = () => {
 
   return (
     <div className="newCollections">
-      <div className="collections">
-        {new_collection.map((item,i) => {
-          return <Item key={i} id={item.id} brand={item.brand} description={item.description} image={item.image} price={item.price} category={item.category}/>
-        })}
-      </div>
+      {new_collection.map((item,i) => {
+        return <Item key={i} id={item.id} brand={item.brand} description={item.description} image={item.image} price={item.price} category={item.category}/>
+      })}
     </div>
   )
 }

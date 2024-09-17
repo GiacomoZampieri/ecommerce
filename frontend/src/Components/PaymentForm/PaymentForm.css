@@ -5,7 +5,7 @@
     border-radius: 6px;
     background: white;
     margin: 30px auto;
-;}
+}
 
 .paymentFormInput{
     width: 100%;
@@ -42,4 +42,19 @@
     color: white;
     font-size: 16px;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    
+    .paymentForm{
+        margin: 30px 10px;
+    }
+
+    .paymentFormInput{
+        width: 90%;
+    }
+
+    .paymentFormInputSubmit{
+        width: 90%;
+    }
 }

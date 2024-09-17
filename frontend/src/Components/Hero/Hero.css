@@ -1,5 +1,5 @@
 .hero{
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     background: linear-gradient(180deg,white,rgba(5,129,183,255) 70%);
     display: flex;
@@ -33,4 +33,23 @@
     color: white;
     font-size: 22px;
     font-weight: 500px;
+}
+
+@media (max-width: 768px) {
+
+    .heroLeft{
+        justify-content: left;
+        padding-left: 18px;
+        margin-top: 30%;
+    }
+    
+    .heroLeft p{
+        font-size: 40px;
+    }
+
+    .heroLatestButton{
+        width: 350px;
+        height: 70px;
+        font-size: 18px;
+    }
 }

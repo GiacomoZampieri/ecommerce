@@ -44,3 +44,15 @@
         margin: 0px;
     }
 }
+
+@media (max-width: 768px) {
+
+    .sidebar{
+        flex-direction: column;
+        padding-top: 10%;
+    }
+
+    .sidebarItem{
+        font-size: 25px;
+    }
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="18.595" tests="12" failures="1">
-  <testsuite name="Root Suite" timestamp="2024-09-10T14:10:10" tests="0" file="cypress\e2e\Login\Signup.cy.js" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="19.166" tests="12" failures="1">
+  <testsuite name="Root Suite" timestamp="2024-09-16T15:34:49" tests="0" file="cypress\e2e\Login\Signup.cy.js" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Testing the signup page" timestamp="2024-09-10T14:10:10" tests="12" time="18.590" failures="1">
+  <testsuite name="Testing the signup page" timestamp="2024-09-16T15:34:49" tests="12" time="19.160" failures="1">
     <testcase name="Testing the signup page Open the signup page from the Login button" time="0.000" classname="Open the signup page from the Login button">
       <failure message="Timed out retrying after 10000ms: expected &apos;http://localhost:3001/login&apos; to equal &apos;/signup&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: expected 'http://localhost:3001/login' to equal '/signup'
     at Context.eval (webpack://frontend/./cypress/e2e/Login/Signup.cy.js:31:17)
@@ -13,27 +13,27 @@
       +'/signup'
       ]]></failure>
     </testcase>
-    <testcase name="Testing the signup page The signup page is displayed correctly" time="0.659" classname="The signup page is displayed correctly">
+    <testcase name="Testing the signup page The signup page is displayed correctly" time="0.680" classname="The signup page is displayed correctly">
     </testcase>
-    <testcase name="Testing the signup page Click Sign Up without enter username, email and password" time="0.336" classname="Click Sign Up without enter username, email and password">
+    <testcase name="Testing the signup page Click Sign Up without enter username, email and password" time="0.442" classname="Click Sign Up without enter username, email and password">
     </testcase>
-    <testcase name="Testing the signup page Enter only the username and click on Sign Up button" time="0.543" classname="Enter only the username and click on Sign Up button">
+    <testcase name="Testing the signup page Enter only the username and click on Sign Up button" time="0.592" classname="Enter only the username and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter only the email and click on Sign Up button" time="0.657" classname="Enter only the email and click on Sign Up button">
+    <testcase name="Testing the signup page Enter only the email and click on Sign Up button" time="0.642" classname="Enter only the email and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter only the password and click on Sign Up button" time="0.530" classname="Enter only the password and click on Sign Up button">
+    <testcase name="Testing the signup page Enter only the password and click on Sign Up button" time="0.551" classname="Enter only the password and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter the username and the email and click on Sign Up button" time="0.874" classname="Enter the username and the email and click on Sign Up button">
+    <testcase name="Testing the signup page Enter the username and the email and click on Sign Up button" time="0.884" classname="Enter the username and the email and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter the username and the password and click on Sign Up button" time="0.750" classname="Enter the username and the password and click on Sign Up button">
+    <testcase name="Testing the signup page Enter the username and the password and click on Sign Up button" time="0.744" classname="Enter the username and the password and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter the email and the password and click on Sign Up button" time="0.841" classname="Enter the email and the password and click on Sign Up button">
+    <testcase name="Testing the signup page Enter the email and the password and click on Sign Up button" time="0.897" classname="Enter the email and the password and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter username,email,password and click on Sign Up button" time="1.154" classname="Enter username,email,password and click on Sign Up button">
+    <testcase name="Testing the signup page Enter username,email,password and click on Sign Up button" time="1.185" classname="Enter username,email,password and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Enter an email already in use and click on Sign Up button" time="1.077" classname="Enter an email already in use and click on Sign Up button">
+    <testcase name="Testing the signup page Enter an email already in use and click on Sign Up button" time="1.073" classname="Enter an email already in use and click on Sign Up button">
     </testcase>
-    <testcase name="Testing the signup page Should delete an item from MongoDB" time="0.116" classname="Should delete an item from MongoDB">
+    <testcase name="Testing the signup page Should delete an item from MongoDB" time="0.121" classname="Should delete an item from MongoDB">
     </testcase>
   </testsuite>
 </testsuites>

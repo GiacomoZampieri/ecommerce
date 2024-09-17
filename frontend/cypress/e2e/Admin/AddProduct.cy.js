@@ -393,8 +393,7 @@ describe('Testing the addProduct functionality', () => {
 
             cy.getByName('tags').click().type(newManProductTags);
 
-            
-            cy.getByName('image').selectFile(path,{ force: true, subjectType:'drag-n-drop' });
+            cy.getByName('image').selectFile(path,{ force: true, subjectType:'drag-n-drop'});
 
             cy.get(addButton).click();
 

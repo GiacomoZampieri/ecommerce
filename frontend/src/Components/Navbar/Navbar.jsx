@@ -5,12 +5,19 @@ import { ShopContext } from '../../Context/ShopContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import logo from '../Assets/logo.png'
 
 const Navbar = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [menu,setMenu] = useState("shop");
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+  };
 
   const {getTotalCartItems} = useContext(ShopContext);
 
@@ -30,9 +37,22 @@ const Navbar = () => {
             {localStorage.getItem('auth-token') 
             ? <button className="LoginLogout" onClick={() => {localStorage.clear();window.location.replace("/")}}>Logout</button> 
             : <Link to='/login'><button className="LoginLogout">Login</button></Link>}
-            <Link to='/cart'><FontAwesomeIcon  className='navLoginCartIcon' icon={faCartShopping} alt="" /></Link>
+
+            <Link to='/cart'><FontAwesomeIcon className='navLoginCartIcon' icon={faCartShopping} alt="" /></Link>
+
             <div className="navbarCartCount">{getTotalCartItems()}</div>
+
             {localStorage.getItem('username') === 'admin' ? <Link to='/admin' style={{color:'black'}}><FontAwesomeIcon icon={faScrewdriverWrench} className='adminIcon'/></Link> : <></>}
+            
+            <FontAwesomeIcon className="menuIcon" icon={faBars} onClick={toggleMenu}/>
+            
+            <ul className={`navbarMenuVertical ${isMenuOpen ? 'active' : ''}`}>
+                <li onClick={() => { setMenu("shop"); toggleMenu(); }}><Link style={{textDecoration:'none',color:'black'}} to='/'>HOME</Link></li>
+                <li onClick={() => { setMenu("mens"); toggleMenu(); }}><Link style={{textDecoration:'none',color:'black'}} to='/newcollections'>NOVITA'</Link></li>
+                <li onClick={() => { setMenu("mens"); toggleMenu(); }}><Link style={{textDecoration:'none',color:'black'}} to='/man'>UOMO</Link></li>
+                <li onClick={() => { setMenu("womens"); toggleMenu(); }}><Link style={{textDecoration:'none',color:'black'}} to='/woman'>DONNA</Link></li> 
+                <li onClick={() => { setMenu("kids"); toggleMenu(); }}><Link style={{textDecoration:'none',color:'black'}} to='/kid'>BAMBINO</Link></li> 
+            </ul>
         </div>
     </div>
   )

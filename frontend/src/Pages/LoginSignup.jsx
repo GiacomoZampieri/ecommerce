@@ -80,6 +80,7 @@ const LoginSignup = () => {
           <input type="password" name='password' value={formData.password} onChange={changeHandler} placeholder='Password...' required />
           <button onClick={() => {state === 'Login' ? login() : signup(); setError("")}}>{state}</button>
         </div>
+        
         <p className='error'>{error}</p>
         {state === "Sign Up" 
         ? <p className="loginSignupLogin">Hai gia un account? <span onClick={() => {setState("Login");setError("")}} className='clickHere'>Clicca qui per il login</span></p> 
