@@ -12,14 +12,16 @@ const app = express();
 
 const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS.split(',');
 
-app.use(express.json());
-
 app.use(cors({
     origin: allowedOrigins, 
 }));
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 //DATABASE CONNECTION WITH MONGO DB
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI);
 
 //API CREATION
 
