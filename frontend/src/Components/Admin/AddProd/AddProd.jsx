@@ -44,7 +44,6 @@ const AddProd = () => {
             if (data.success) {
                 responseData = data;
             } else {
-                //alert('Inserisci una foto');
                 setError(data.errors);
                 responseData = data;
             }

@@ -10,13 +10,8 @@ const cors = require("cors");
 const { type } = require("os");
 const app = express();
 
-const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS.split(',');
 
-const corsOptions = {
-  origin: "https://ecommerce-6k1a.vercel.app",
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 app.options('*', cors()); 
@@ -25,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //DATABASE CONNECTION WITH MONGO DB
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect("mongodb+srv://admin3:admin3@e-commerce.zsqb1.mongodb.net/");
 
 //API CREATION
 
@@ -293,28 +288,26 @@ app.post('/login', async (req,res) => {
     let user = await Users.findOne({email:req.body.email});
 
     try {
-        // Trova l'utente con l'email fornita
+        //Trova l'utente con l'email fornita
         let user = await Users.findOne({ email });
 
-        if (user) {
-            // Confronta la password fornita con la password hashata memorizzata
+        if (user) { //Se l'utente esiste
+            //Confronta la password fornita con la password hashata memorizzata
             const passCompare = password === user.password;
 
-            if (passCompare) { // Se le password corrispondono
-                // Crea un payload per il token JWT
+            if (passCompare) { //Se le password corrispondono
                 const data = {
                     user: {
                         id: user.id
                     }
                 };
 
-                // Firma il token JWT
                 const token = jwt.sign(data, 'secret_ecom');
 
-                // Invia una risposta di successo con il token e i dettagli dell'utente
+                //Invia una risposta di successo con il token e i dettagli dell'utente
                 return res.json({ success: true, token, user });
             } else {
-                // Password errata
+                //Password errata
                 return res.json({ success: false, errors: "Password errata!" });
             }
         } else {

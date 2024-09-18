@@ -19,10 +19,10 @@ const ShopContextProvider = (props) => {
     const [cartItems,setCartItems] = useState(getDefaultCart);
 
     useEffect(() => {
-        fetch('https://ecommerce-6k1a-mdporbmri-giacomozampieris-projects.vercel.app/allproducts').then((response) => response.json()).then((data) => setAllProduct(data));
+        fetch('http://localhost:4000/allproducts').then((response) => response.json()).then((data) => setAllProduct(data));
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://ecommerce-6k1a-mdporbmri-giacomozampieris-projects.vercel.app/getcart',{
+            fetch('http://localhost:4000/getcart',{
                 method:"POST",
                 headers:{
                     Accept:'application/form-data',
@@ -40,7 +40,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev) => ({...prev,[itemId]:prev[itemId]+1}));
         
         if(localStorage.getItem('auth-token')){
-            fetch('https://ecommerce-6k1a-mdporbmri-giacomozampieris-projects.vercel.app/addtocart',{
+            fetch('http://localhost:4000/addtocart',{
                 method:"POST",
                 headers:{
                     Accept:'application/form-data',
@@ -57,7 +57,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev) => ({...prev,[itemId]:prev[itemId]-1}));
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://ecommerce-6k1a-mdporbmri-giacomozampieris-projects.vercel.app/removefromcart',{
+            fetch('http://localhost:4000/removefromcart',{
                 method:"POST",
                 headers:{
                     Accept:'application/form-data',
